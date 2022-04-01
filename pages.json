@@ -1,0 +1,84 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+		"^tn-(.*)": "@/tuniao-ui/components/tn-$1/tn-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	    {
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/found/found",
+            "style" :                                                                                    
+            {
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/guide/guide",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+			"path": "pages/404/404",
+			"style": {
+				"navigationBarTitleText": "页面未找到",
+				"enablePullDownRefresh": false
+			}
+		}
+        ,{
+            "path" : "pages/release/release",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/home/home"
+			},
+			{
+				"pagePath": "pages/found/found"
+			},
+			{
+				"pagePath": "pages/guide/guide"
+			},
+			{
+				"pagePath": "pages/mine/mine"
+			},
+			{
+				"pagePath" : "pages/release/release"
+			}
+		]
+	}
+}

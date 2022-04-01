@@ -1,0 +1,123 @@
+
+.inline.data-v-92bb8f34{
+	display:inline-flex;
+}
+.location.data-v-92bb8f34{
+	height:106rpx;
+	display:inline-flex;
+	vertical-align:bottom;
+}
+.location-img.data-v-92bb8f34{
+	width: 40rpx;
+	height: 50rpx;
+	margin:28rpx;
+	display:flex;
+}
+.location-text.data-v-92bb8f34{
+	font-size: 32rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.right.data-v-92bb8f34{
+	width: 30rpx;
+	height: 30rpx;
+	display: flex;
+	margin:41rpx 0rpx 35rpx 8rpx;
+}
+.header-box.data-v-92bb8f34{
+	width: 750rpx;
+	height: 60rpx;
+}
+.banner-swiper-img.data-v-92bb8f34 {
+	width: 750rpx;
+	height: 400rpx;
+	z-index: -1;
+	box-shadow: 0 0 2px 0 rgba(108, 188, 108 , 0.8);
+}
+.crile.data-v-92bb8f34 {
+	width: 750rpx;
+	height: 50rpx;
+	position: absolute;
+	left: 0;
+	top: 355rpx;
+	z-index: 0;
+}
+.new-content.data-v-92bb8f34{
+	margin-top: 25rpx;
+	margin-left: 15rpx;
+	margin-right: 15rpx;
+}
+.massage.data-v-92bb8f34{
+	height:180rpx;
+	margin-top: 25rpx;
+	margin-left: 15rpx;
+	margin-right: 15rpx;
+}
+.massage-logo.data-v-92bb8f34{
+	display: inline-flex;
+	margin-top: 30rpx;
+	margin-right: 30rpx;
+	width:46rpx;
+	flex-wrap: wrap;
+	vertical-align:top;
+}
+.massage-text.data-v-92bb8f34{
+	display: inline-flex;
+	margin-top: 30rpx;
+	width: 470rpx;
+	vertical-align:top;
+	flex-wrap: wrap;
+}
+.massage-text-content.data-v-92bb8f34{
+	display:flex;
+	flex: 1 0 100%;
+}
+.massage-img.data-v-92bb8f34{
+	display: inline-flex;
+	margin-top: 30rpx;
+	vertical-align:top;
+}
+.massage-img-img.data-v-92bb8f34{
+	width:160rpx;
+	height:110rpx;
+	margin-top: 10rpx;
+	border-radius: 10rpx;
+}
+.massage-num.data-v-92bb8f34{
+	text-align: center;
+	font-size: 20rpx;
+	width: 100%;
+	color: #838383;
+}
+.massage-text-herder.data-v-92bb8f34{
+	display: flex;
+	height:90rpx;
+}
+.massage-text-herder-image.data-v-92bb8f34{
+	display: inline-flex;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+	width:50rpx;
+	height:50rpx;
+	border-radius: 25rpx;
+}
+.massage-text-herder-text.data-v-92bb8f34{
+	font-size: 20rpx;
+	color: #838383;
+	margin-left: 10rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.line-line.data-v-92bb8f34{
+	margin-left: 76rpx;
+}
+.massage-img image.data-v-92bb8f34{
+	transition:all .2s ease 0s;
+}
+.massage-img:hover image.data-v-92bb8f34{
+	-webkit-transform:scale(.9) rotate(3deg);
+	        transform:scale(.9) rotate(3deg);
+}
+

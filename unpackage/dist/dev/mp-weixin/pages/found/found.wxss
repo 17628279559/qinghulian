@@ -1,0 +1,10 @@
+
+.location-img.data-v-5f6b684c{
+	width: 50rpx;
+	height: 50rpx;
+}
+.found-content.data-v-5f6b684c{
+	padding-top: 50rpx;
+	box-shadow: 0rpx -1rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+

@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/found/found",
+    "pages/guide/guide",
+    "pages/mine/mine",
+    "pages/404/404",
+    "pages/release/release"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home"
+      },
+      {
+        "pagePath": "pages/found/found"
+      },
+      {
+        "pagePath": "pages/guide/guide"
+      },
+      {
+        "pagePath": "pages/mine/mine"
+      },
+      {
+        "pagePath": "pages/release/release"
+      }
+    ]
+  },
+  "usingComponents": {
+    "my-tabbar": "/components/tabbar/tabbar"
+  },
+  "sitemapLocation": "sitemap.json"
+}
