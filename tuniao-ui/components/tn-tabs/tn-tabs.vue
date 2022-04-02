@@ -3,7 +3,7 @@
     
     <!-- _tgetRect()对组件根节点无效，因为写了.in(this)，故这里获取内层接点尺寸 -->
     <view :id="id">
-      <scroll-view scroll-x class="tn-tabs__scroll-view" :scroll-left="scrollLeft" scroll-with-animation>
+      <scroll-view scroll-x class="tn-tabs__scroll-view" :scroll-left="tnscrollLeft" scroll-with-animation>
         <view class="tn-tabs__scroll-view__box" :class="{'tn-tabs__scroll-view--flex': !isScroll}">
           <!-- item -->
           <view
@@ -107,13 +107,9 @@
         default: 50
       },
       // 底部滑块的高度
-      barHeight: {
+      tnbarHeight: {
         type: Number,
-<<<<<<< HEAD
-        default: 4
-=======
         default: 5
->>>>>>> a107c16 (清明节更新)
       },
       // 自定义底部滑块的样式
       barStyle: {
@@ -145,11 +141,11 @@
       tabBarStyle() {
         let style = {
           width: this.$t.string.getLengthUnitValue(this.barWidth),
-          height: this.$t.string.getLengthUnitValue(this.barHeight),
-          borderRadius: `${this.barHeight / 2}rpx`,
+          height: this.$t.string.getLengthUnitValue(this.tnbarHeight),
+          borderRadius: `${this.tnbarHeight / 2}rpx`,
           backgroundColor: this.activeColor,
           opacity: this.barMoveFirst ? 0 : 1,
-          transform: `translate(${this.scrollBarLeft}px, -100%)`,
+          transform: `translate(${this.tnscrollBarLeft}px, -100%)`,
           transitionDuration: this.barMoveFirst ? '0s' : `${this.duration}s`
         }
         Object.assign(style, this.barStyle)
@@ -184,13 +180,13 @@
         // id值
         id: this.$t.uuid(),
         // 滚动scroll-view的左边距离
-        scrollLeft: 0,
+        tnscrollLeft: 0,
         // 存放查询后tab菜单的节点信息
         tabQueryInfo: [],
         // 组件宽度
         componentWidth: 0,
         // 底部滑块的移动距离
-        scrollBarLeft: 0,
+        tnscrollBarLeft: 0,
         // 组件到屏幕左边的巨鹿
         componentLeft: 0,
         // 当前选中的itemIndex
@@ -263,14 +259,14 @@
         // 活动item的左边到组件左边的距离
         let offsetLeft = tabInfo.left - this.componentLeft
         // 计算scroll-view移动的距离
-        let scrollLeft = offsetLeft - (this.componentWidth - tabWidth) / 2
-        this.scrollLeft = scrollLeft < 0 ? 0 : scrollLeft
+        let tnscrollLeft = offsetLeft - (this.componentWidth - tabWidth) / 2
+        this.tnscrollLeft = tnscrollLeft < 0 ? 0 : tnscrollLeft
         
         // 计算当前滑块需要移动的距离，当前活动item的中点到左边的距离减去滑块宽度的一半
         let left = tabInfo.left + tabInfo.width / 2 - this.componentLeft
         
         // 计算当前活跃item到组件左边的距离
-        this.scrollBarLeft = left - uni.upx2px(this.barWidth) / 2
+        this.tnscrollBarLeft = left - uni.upx2px(this.barWidth) / 2
         
         // 防止在计算时出错，所以延迟执行标记不是第一次移动
         if (this.barMoveFirst) {
@@ -337,11 +333,7 @@
     
     &__bar {
       position: absolute;
-<<<<<<< HEAD
-      bottom: 0;
-=======
       bottom: 50rpx;
->>>>>>> a107c16 (清明节更新)
     }
   }
 </style>

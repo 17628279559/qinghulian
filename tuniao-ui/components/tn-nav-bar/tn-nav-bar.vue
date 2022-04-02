@@ -21,11 +21,7 @@
           </view>
         </view>
         <view v-else class="tn-custom-nav-bar__bar__action" @tap="handlerBack">
-<<<<<<< HEAD
-        	<text class="tn-custom-nav-bar__bar__action--nav-back" :class="[`tn-icon-${backIcon}`]"></text>
-=======
 			<u-icon :name="backIcon" size="28"></u-icon>
->>>>>>> a107c16 (清明节更新)
         	<text class="tn-custom-nav-bar__bar__action--nav-back-text" v-if="backTitle">{{ backTitle }}</text>
         </view>
       </view>
@@ -58,7 +54,7 @@
       // 高度单位
       unit: {
         type: String,
-        default: 'px'
+        default: 'rpx'
       },
       // 是否显示返回按钮
       isBack: {
@@ -314,11 +310,8 @@
       &__action {
         display: flex;
         align-items: center;
-<<<<<<< HEAD
-=======
 		margin-left: 20rpx;
 		margin-right: 20rpx;
->>>>>>> a107c16 (清明节更新)
         height: 100%;
         justify-content: center;
         max-width: 100%;

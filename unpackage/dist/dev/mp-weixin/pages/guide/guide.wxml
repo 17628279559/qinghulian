@@ -1,1 +1,1 @@
-<view><view>导航</view><my-tabbar vue-id="2af2e746-1" pageValue="{{pageNum}}" bind:__l="__l"></my-tabbar></view>
+<view><view>导航</view></view>

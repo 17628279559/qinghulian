@@ -4,17 +4,26 @@
 		"^tn-(.*)": "@/tuniao-ui/components/tn-$1/tn-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path" : "pages/index/index",
+			"style" :                                                                                    
+			{
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+	    
+		},
+		{
+		    "path" : "pages/found/found",
+		    "style" :                                                                                    
+		    {
+		        "navigationStyle": "custom",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		},
 	    {
             "path" : "pages/home/home",
-            "style" :                                                                                    
-            {
-                "navigationStyle": "custom",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/found/found",
             "style" :                                                                                    
             {
                 "navigationStyle": "custom",
@@ -26,11 +35,7 @@
             "path" : "pages/guide/guide",
             "style" :                                                                                    
             {
-<<<<<<< HEAD
-                "navigationBarTitleText": "",
-=======
                 "navigationStyle": "custom",
->>>>>>> a107c16 (清明节更新)
                 "enablePullDownRefresh": false
             }
             
@@ -47,11 +52,8 @@
 		{
 			"path": "pages/404/404",
 			"style": {
-<<<<<<< HEAD
 				"navigationBarTitleText": "页面未找到",
-=======
 				"navigationStyle": "custom",
->>>>>>> a107c16 (清明节更新)
 				"enablePullDownRefresh": false
 			}
 		}
@@ -59,11 +61,8 @@
             "path" : "pages/release/release",
             "style" :                                                                                    
             {
-<<<<<<< HEAD
                 "navigationBarTitleText": "",
-=======
                 "navigationStyle": "custom",
->>>>>>> a107c16 (清明节更新)
                 "enablePullDownRefresh": false
             }
             
@@ -74,23 +73,5 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-	},
-	"tabBar": {
-		"list": [{
-				"pagePath": "pages/home/home"
-			},
-			{
-				"pagePath": "pages/found/found"
-			},
-			{
-				"pagePath": "pages/guide/guide"
-			},
-			{
-				"pagePath": "pages/mine/mine"
-			},
-			{
-				"pagePath" : "pages/release/release"
-			}
-		]
 	}
 }

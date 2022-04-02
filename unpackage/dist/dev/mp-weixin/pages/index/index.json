@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-back-top": "/node-modules/uview-ui/components/u-back-top/u-back-top",
+    "u-tabbar": "/node-modules/uview-ui/components/u-tabbar/u-tabbar",
+    "u-tabbar-item": "/node-modules/uview-ui/components/u-tabbar-item/u-tabbar-item",
+    "home": "/pages/home/home",
+    "found": "/pages/found/found",
+    "guide": "/pages/guide/guide",
+    "mine": "/pages/mine/mine"
+  }
+}

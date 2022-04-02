@@ -281,6 +281,6 @@
 }
 .tn-tabs__bar.data-v-77999140 {
   position: absolute;
-  bottom: 0;
+  bottom: 50rpx;
 }
 

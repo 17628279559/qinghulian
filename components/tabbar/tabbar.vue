@@ -6,7 +6,8 @@
 			:fixed="true"
 			:placeholder="true"
 			:border="false"
-			:safeAreaInsetBottom="true"
+			:animation="true"
+			:safeAreaInsetBottom="false"
 			activeColor="#95EC6A"
 		>
 			<u-tabbar-item text="首页">	
@@ -92,9 +93,7 @@
 		},
 		methods: {
 			changebar(name){
-				uni.switchTab({
-					url:this.$member.pageList[name]
-				})
+				this.$member.pageValue = name
 			}
 		}
 	}

@@ -1,14 +1,11 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
 		},
 		onShow: function() {
-			uni.hideTabBar(),
-			console.log('App Show')
+			uni.hideTabBar()
 		},
 		onHide: function() {
-			console.log('App Hide')
 		},
 		onPageNotFound(){
 			uni.navigateTo({

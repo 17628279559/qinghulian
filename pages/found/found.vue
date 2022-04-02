@@ -1,15 +1,6 @@
 <template>
-<<<<<<< HEAD
-	<view>
-		<view class="found-content">
-		  <tn-tabs  :list="fixedList" :current="current" :isScroll="false" inactiveColor="#838383"  activeColor="#95EC6A" @change="tabChange"></tn-tabs>
-		</view>
-		
-		
-		
-=======
 	<view class="foundPage">
-		<tn-nav-bar :height="68" backIcon="search" fixed>		
+		<tn-nav-bar :height="140" backIcon="search" fixed>		
 			<view class="foundPage__content">
 				<tn-tabs :list="fixedList" :current="current" :isScroll="true" :showBar="true" inactiveColor="#838383" gutter="30" activeColor="#95EC6A" @change="tabChange"></tn-tabs>
 			</view>
@@ -31,33 +22,44 @@
 		</view>
 		<view class="foundPage__hidden" :class="{foundPage__display:current == 1}">
 			<view class="founded">
-				<!-- <view v-for="(item, index) in topSearchNews" :key="index"> -->
+				<view v-for="(item, findex) in foundPageNews" :key="findex">
 					<view class="founded__head">
-						<image class="founded__head__image" src="https://code.zwt666.top/img/header.jpg"></image>
+						<image class="founded__head__image" :src="item.headerUrl" mode="aspectFill"></image>
 					</view>
 					<view class="founded__content">
 						<view class="founded__content__released">
-							<view calss="founded__content__released__name">中国传媒大学
+							<view class="founded__content__released__name">{{item.name}}
+							</view>
+							<view class="founded__content__released__time">{{item.time}}
 							</view>
 						</view>
 						<view class="founded__content__text">
-							
+							{{item.text}})
 						</view>
 						<!-- 视频这块先空着 -->
-<!-- 						<view v-if="item.multimediaType == 'vedio'" class="founded__content__vedio">
+						<view v-if="item.multimediaType == 'vedio'" class="founded__content__vedio">
 							
 						</view>
-						<view v-else class="founded__content__image">
-							
-						</view> -->
-						<view class="founded__content__image">
-							
+						<view v-else class="founded__content__multimedia">
+							<image class="founded__content__multimedia__image" :src="item.imageUrl" mode="aspectFit"></image>
 						</view>
 						<view class="founded__content__like">
-							
+							<view class="founded__content__like__left">
+								<image class="founded__content__like__left__image" src="/static/like/share/1.png"></image>
+								<text class="founded__content__like__left__txt">{{item.share}}</text>
+							</view>
+							<view class="founded__content__like__middle">
+								<image class="founded__content__like__middle__image" src="/static/like/talk/1.png"></image>
+								<text class="founded__content__like__left__txt">{{item.talk}}</text>
+							</view>							
+							<view class="founded__content__like__right">
+								<image class="founded__content__like__right__image" src="/static/like/like/1.png"></image>
+								<text class="founded__content__like__left__txt">{{item.like}}</text>
+							</view>
 						</view>
 					</view>
-				<!-- </view> -->
+					<view class="border-content tn-border-solid-top"></view>
+				</view>
 			</view>
 		</view>
 		<view class="foundPage__hidden" :class="{foundPage__display:current == 2}">
@@ -65,9 +67,6 @@
 				关注
 			</view>
 		</view>
-		<u-back-top :scroll-top="scrollTop" icon="arrow-up"></u-back-top>
->>>>>>> a107c16 (清明节更新)
-		<my-tabbar :pageValue="pageNum"/>
 	</view>
 </template>
 
@@ -75,14 +74,7 @@
 	export default {
 		data() {
 			return {
-				pageNum:1,
 				current: 1,
-<<<<<<< HEAD
-				fixedList: [
-				  {name: '热榜', count: 10},
-				  {name: '发现'},
-				  {name: '关注', count: '99+'},
-=======
 				scrollTop:0,
 				topSearchNews:[
 					{content:"受疫情影响将延期返校",index:0},
@@ -122,11 +114,63 @@
 					{content:"凑字",index:18,count:311,color:"#F5DC70"},
 					{content:"凑字",index:19,count:213,color:"#F5DC70"}
 				],
+				foundPageNews:[
+					{
+						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						name:"中国传媒大学",
+						time:"19:42",
+						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
+						multimediaType:"image",
+						imageUrl:"https://code.zwt666.top/img/school.jpg",
+						share:"602",
+						talk:"123",
+						like:"2532"
+						},{
+						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						name:"中国传媒大学",
+						time:"19:42",
+						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
+						multimediaType:"image",
+						imageUrl:"https://code.zwt666.top/img/school.jpg",
+						share:"602",
+						talk:"123",
+						like:"2532"
+						},{
+						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						name:"中国传媒大学",
+						time:"19:42",
+						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
+						multimediaType:"image",
+						imageUrl:"https://code.zwt666.top/img/school.jpg",
+						share:"602",
+						talk:"123",
+						like:"2532"
+						},{
+						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						name:"中国传媒大学",
+						time:"19:42",
+						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
+						multimediaType:"image",
+						imageUrl:"https://code.zwt666.top/img/school.jpg",
+						share:"602",
+						talk:"123",
+						like:"2532"
+						},{
+						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						name:"中国传媒大学",
+						time:"19:42",
+						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
+						multimediaType:"image",
+						imageUrl:"https://code.zwt666.top/img/school.jpg",
+						share:"602",
+						talk:"123",
+						like:"2532"
+						}
+				],
 				fixedList: [
 				  {name: '热榜'},
 				  {name: '发现'},
 				  {name: '关注', count: 34},
->>>>>>> a107c16 (清明节更新)
 				]
 			}
 		},
@@ -137,17 +181,6 @@
 		}
 	}
 </script>
-
-<<<<<<< HEAD
-<style scoped>
-	.location-img{
-		width: 50rpx;
-		height: 50rpx;
-	}
-	.found-content{
-		padding-top: 50rpx;
-		box-shadow: 0rpx -1rpx 10rpx rgba(0, 0, 0, 0.1);
-=======
 <style lang="scss" scoped>
 	.foundPage{
 		&__content{
@@ -222,9 +255,10 @@
 		}
 	}
 	.founded{
-		margin: 30rpx;
 		margin-top: 160rpx;
 		&__head{
+			margin-top:20rpx;
+			margin-left: 30rpx;
 			display: inline-flex;
 			width:100rpx;
 			&__image{
@@ -235,18 +269,72 @@
 		}
 		
 		&__content{
+			margin-top:20rpx;
+			margin-right: 30rpx;
 			display:inline-flex;
+			width: 570rpx;
 			vertical-align:top;
+			flex-wrap: wrap;
 			&__released{
 				display:inline-flex;
 				&__name{
-					color:"#096bd1";
-					font-size: 32;
+					color: #13227A;
+					font-size: 28rpx;
+				}
+				&__time{
+					color: #838383;
+					font-size: 22rpx;
+					margin-left: 15rpx;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			&__text{
+				margin-top: 10rpx;
+				font-size: 26rpx;
+			}
+			
+			&__multimedia{
+				margin-top: 10rpx;
+				&__image{
+					width: 500rpx;
+					height:280rpx;
+				}
+			}
+			
+			&__like{
+				display: flex;
+				margin-bottom: 8rpx;
+				&__left{
+					width:140rpx;
+					&__image{
+						display: inline-flex;
+						width: 30rpx;
+						height:30rpx;
+					}
+					&__txt{
+						color: #838383;
+						font-size: 24rpx;
+						margin-left: 5rpx;
+					}
+				}
+				&__middle{
+					width:140rpx;
+					margin-left: 70rpx;
+					&__image{
+						width: 30rpx;
+						height:30rpx;
+					}
+				}
+				&__right{
+					margin-left: 70rpx;
+					&__image{
+						width: 30rpx;
+						height:30rpx;
+					}
 				}
 			}
 		}
-		
-		
->>>>>>> a107c16 (清明节更新)
 	}
 </style>
