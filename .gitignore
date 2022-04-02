@@ -3,6 +3,7 @@ node_modules
 __pycache__
 /dist
 .hbuilderx
+unpackage
 
 # local env files
 .env.local
