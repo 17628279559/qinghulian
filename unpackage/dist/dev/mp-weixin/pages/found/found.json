@@ -1,8 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "tn-nav-bar": "/tuniao-ui/components/tn-nav-bar/tn-nav-bar",
-    "tn-tabs": "/tuniao-ui/components/tn-tabs/tn-tabs"
-  }
-}
