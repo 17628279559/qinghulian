@@ -109,7 +109,11 @@
       // 底部滑块的高度
       barHeight: {
         type: Number,
+<<<<<<< HEAD
         default: 4
+=======
+        default: 5
+>>>>>>> a107c16 (清明节更新)
       },
       // 自定义底部滑块的样式
       barStyle: {
@@ -333,7 +337,11 @@
     
     &__bar {
       position: absolute;
+<<<<<<< HEAD
       bottom: 0;
+=======
+      bottom: 50rpx;
+>>>>>>> a107c16 (清明节更新)
     }
   }
 </style>

@@ -26,7 +26,11 @@
             "path" : "pages/guide/guide",
             "style" :                                                                                    
             {
+<<<<<<< HEAD
                 "navigationBarTitleText": "",
+=======
+                "navigationStyle": "custom",
+>>>>>>> a107c16 (清明节更新)
                 "enablePullDownRefresh": false
             }
             
@@ -43,7 +47,11 @@
 		{
 			"path": "pages/404/404",
 			"style": {
+<<<<<<< HEAD
 				"navigationBarTitleText": "页面未找到",
+=======
+				"navigationStyle": "custom",
+>>>>>>> a107c16 (清明节更新)
 				"enablePullDownRefresh": false
 			}
 		}
@@ -51,7 +59,11 @@
             "path" : "pages/release/release",
             "style" :                                                                                    
             {
+<<<<<<< HEAD
                 "navigationBarTitleText": "",
+=======
+                "navigationStyle": "custom",
+>>>>>>> a107c16 (清明节更新)
                 "enablePullDownRefresh": false
             }
             
