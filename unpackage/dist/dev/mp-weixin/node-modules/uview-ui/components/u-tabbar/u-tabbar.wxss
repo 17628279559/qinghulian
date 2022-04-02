@@ -281,7 +281,6 @@ view.data-v-3426a5b2, scroll-view.data-v-3426a5b2, swiper-item.data-v-3426a5b2 {
 .u-tabbar--fixed.data-v-3426a5b2 {
   position: fixed;
   bottom: 0;
-  box-shadow: 0rpx -1rpx 10rpx rgba(0, 0, 0, 0.1);
   left: 0;
   right: 0;
 }

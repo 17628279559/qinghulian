@@ -265,13 +265,12 @@ view.data-v-b7180372, scroll-view.data-v-b7180372, swiper-item.data-v-b7180372 {
 .u-back-top.data-v-b7180372 {
   display: flex;
   flex-direction: row;
-  opacity: 0.4;
   flex-direction: column;
   align-items: center;
   flex: 1;
   height: 100%;
   justify-content: center;
-  background-color: #A5FC7A;
+  background-color: #E1E1E1;
 }
 .u-back-top__tips.data-v-b7180372 {
   font-size: 12px;

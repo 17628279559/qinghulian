@@ -123,8 +123,12 @@ export default {
     },
     methods: {
       // 切换导航
-      switchTabbar(index) {
-        this._switchTabbarPage(index)
+      async switchTabbar(index) {
+        await this._switchTabbarPage(index); 
+		uni.pageScrollTo({
+		         scrollTop: 0, //距离页面顶部的距离
+		         duration: 0,
+		});
       },
       
       // 导航页面滚动到底部
@@ -133,7 +137,7 @@ export default {
       
       // 切换导航页面
       _switchTabbarPage(index) {
-        this.pageNum = index
+        this.pageNum = index;
       }
     }
   }

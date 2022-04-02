@@ -947,7 +947,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7647,7 +7647,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7668,14 +7668,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7761,7 +7761,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"test","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8635,9 +8635,9 @@ function resolveLocaleChain(locale) {
 
 /***/ }),
 /* 5 */
-/*!***************************************!*\
-  !*** D:/文档/项目/uniapp/test/pages.json ***!
-  \***************************************/
+/*!************************************!*\
+  !*** D:/桌面/uniapp/test/pages.json ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8778,9 +8778,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 12 */
-/*!*******************************************!*\
-  !*** D:/文档/项目/uniapp/test/store/index.js ***!
-  \*******************************************/
+/*!****************************************!*\
+  !*** D:/桌面/uniapp/test/store/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10120,9 +10120,9 @@ module.exports = index_cjs;
 
 /***/ }),
 /* 14 */
-/*!***********************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/index.js ***!
-  \***********************************************************/
+/*!********************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/index.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10209,9 +10209,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 15 */
-/*!**********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/mixin/mixin.js ***!
-  \**********************************************************************/
+/*!*******************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/mixin/mixin.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10378,9 +10378,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 16 */
-/*!************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/mixin/mpMixin.js ***!
-  \************************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/mixin/mpMixin.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10393,9 +10393,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 17 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/index.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/index.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10406,9 +10406,9 @@ _Request.default;exports.default = _default;
 
 /***/ }),
 /* 18 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/Request.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/Request.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10614,9 +10614,9 @@ Request = /*#__PURE__*/function () {
 
 /***/ }),
 /* 19 */
-/*!********************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
-  \********************************************************************************************/
+/*!*****************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/dispatchRequest.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10627,9 +10627,9 @@ function _default(config) {return (0, _index.default)(config);};exports.default 
 
 /***/ }),
 /* 20 */
-/*!**************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/adapters/index.js ***!
-  \**************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/adapters/index.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10735,9 +10735,9 @@ function _default(config) {return new Promise(function (resolve, reject) {
 
 /***/ }),
 /* 21 */
-/*!****************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
-  \****************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/buildURL.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10814,9 +10814,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 22 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/utils.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/utils.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10955,9 +10955,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 23 */
-/*!******************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
-  \******************************************************************************************/
+/*!***************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/buildFullPath.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10985,9 +10985,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 24 */
-/*!*********************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
-  \*********************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11009,9 +11009,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 25 */
-/*!*******************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
-  \*******************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/helpers/combineURLs.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11033,9 +11033,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 26 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/settle.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/settle.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11059,9 +11059,9 @@ function settle(resolve, reject, response) {var
 
 /***/ }),
 /* 27 */
-/*!***********************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
-  \***********************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/InterceptorManager.js ***!
+  \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11119,9 +11119,9 @@ InterceptorManager;exports.default = _default;
 
 /***/ }),
 /* 28 */
-/*!****************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
-  \****************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/mergeConfig.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11232,9 +11232,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 
 /***/ }),
 /* 29 */
-/*!*************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/core/defaults.js ***!
-  \*************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/core/defaults.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11270,9 +11270,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 30 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/luch-request/utils/clone.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/luch-request/utils/clone.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11541,7 +11541,7 @@ var clone = function () {
 }();var _default =
 
 clone;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 31).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../hbuilderx/plugins/uniapp-cli/node_modules/buffer/index.js */ 31).Buffer))
 
 /***/ }),
 /* 31 */
@@ -13618,17 +13618,17 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 /* 35 */
-/*!*********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/util/route.js ***!
-  \*********************************************************************/
+/*!******************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/util/route.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 36));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 并且带有路由拦截功能
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */var
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * 路由跳转方法，该方法相对于直接使用uni.xxx的好处是使用更加简单快捷
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * 并且带有路由拦截功能
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */var
 
 Router = /*#__PURE__*/function () {
   function Router() {_classCallCheck(this, Router);
@@ -14541,9 +14541,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 39 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/colorGradient.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/colorGradient.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14684,9 +14684,9 @@ function colorToRgba(color, alpha) {
 
 /***/ }),
 /* 40 */
-/*!************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/test.js ***!
-  \************************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/test.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14981,9 +14981,9 @@ function regExp(o) {
 
 /***/ }),
 /* 41 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/debounce.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/debounce.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15020,9 +15020,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 42 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/throttle.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/throttle.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15060,9 +15060,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 43 */
-/*!*************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/index.js ***!
-  \*************************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/index.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15775,9 +15775,9 @@ function setConfig(_ref3)
 
 /***/ }),
 /* 44 */
-/*!*************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/digit.js ***!
-  \*************************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/digit.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15950,9 +15950,9 @@ function enableBoundaryChecking() {var flag = arguments.length > 0 && arguments[
 
 /***/ }),
 /* 45 */
-/*!************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/config.js ***!
-  \************************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/config.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15993,9 +15993,9 @@ if (true) {
 
 /***/ }),
 /* 46 */
-/*!***********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props.js ***!
-  \***********************************************************************/
+/*!********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16192,9 +16192,9 @@ _upload.default);exports.default = _default;
 
 /***/ }),
 /* 47 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/actionSheet.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/actionSheet.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16225,9 +16225,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 48 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/album.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/album.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16258,9 +16258,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 49 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/alert.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/alert.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16288,9 +16288,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 50 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/avatar.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/avatar.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16324,9 +16324,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 51 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/avatarGroup.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/avatarGroup.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16355,9 +16355,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 52 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/backtop.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/backtop.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16389,9 +16389,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 53 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/badge.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/badge.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16424,9 +16424,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 54 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/button.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/button.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16474,9 +16474,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 55 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/calendar.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/calendar.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16524,9 +16524,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 56 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/carKeyboard.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/carKeyboard.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16547,9 +16547,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 57 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/cell.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/cell.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16590,9 +16590,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 58 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/cellGroup.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/cellGroup.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16615,9 +16615,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 59 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/checkbox.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/checkbox.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16650,9 +16650,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 60 */
-/*!*************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
-  \*************************************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/checkboxGroup.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16687,9 +16687,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 61 */
-/*!**************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/circleProgress.js ***!
-  \**************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/circleProgress.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16710,9 +16710,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 62 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/code.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/code.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16739,9 +16739,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 63 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/codeInput.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/codeInput.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16775,9 +16775,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 64 */
-/*!***************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/col.js ***!
-  \***************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/col.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16802,9 +16802,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 65 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/collapse.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/collapse.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16827,9 +16827,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 66 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/collapseItem.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/collapseItem.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16860,9 +16860,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 67 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/columnNotice.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/columnNotice.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16892,9 +16892,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 68 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/countDown.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/countDown.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16918,9 +16918,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 69 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/countTo.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/countTo.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16951,9 +16951,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 70 */
-/*!**************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/datetimePicker.js ***!
-  \**************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/datetimePicker.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16995,9 +16995,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 71 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/divider.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/divider.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17025,9 +17025,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 72 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/empty.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/empty.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17058,9 +17058,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 73 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/form.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/form.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17088,9 +17088,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 74 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/formItem.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/formItem.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17118,9 +17118,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 75 */
-/*!***************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/gap.js ***!
-  \***************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/gap.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17145,9 +17145,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 76 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/grid.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/grid.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17170,9 +17170,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 77 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/gridItem.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/gridItem.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17194,9 +17194,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 78 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/icon.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/icon.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17238,9 +17238,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 45));f
 
 /***/ }),
 /* 79 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/image.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/image.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17276,9 +17276,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 80 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/indexAnchor.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/indexAnchor.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17303,9 +17303,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 81 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/indexList.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/indexList.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17330,9 +17330,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 82 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/input.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/input.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17386,9 +17386,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 83 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/keyboard.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/keyboard.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17424,9 +17424,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 84 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/line.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/line.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17452,9 +17452,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 85 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/lineProgress.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/lineProgress.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17479,9 +17479,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 86 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/link.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/link.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17513,9 +17513,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 45));f
 
 /***/ }),
 /* 87 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/list.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/list.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17549,9 +17549,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 88 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/listItem.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/listItem.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17572,9 +17572,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 89 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/loadingIcon.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/loadingIcon.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17610,9 +17610,9 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ../config */ 45));f
 
 /***/ }),
 /* 90 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/loadingPage.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/loadingPage.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17640,9 +17640,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 91 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/loadmore.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/loadmore.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17677,9 +17677,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 92 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/modal.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/modal.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17715,9 +17715,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 93 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/navbar.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/navbar.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17754,9 +17754,9 @@ var _color = _interopRequireDefault(__webpack_require__(/*! ../color */ 94));fun
 
 /***/ }),
 /* 94 */
-/*!***********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/color.js ***!
-  \***********************************************************************/
+/*!********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/color.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17781,9 +17781,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 95 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/noNetwork.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/noNetwork.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17806,9 +17806,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 96 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/noticeBar.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/noticeBar.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17841,9 +17841,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 97 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/notify.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/notify.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17871,9 +17871,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 98 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/numberBox.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/numberBox.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17914,9 +17914,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 99 */
-/*!**************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
-  \**************************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/numberKeyboard.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17939,9 +17939,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 100 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/overlay.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/overlay.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17965,9 +17965,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 101 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/parse.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/parse.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17995,9 +17995,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 102 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/picker.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/picker.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18033,9 +18033,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 103 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/popup.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/popup.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18070,9 +18070,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 104 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/radio.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/radio.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18105,9 +18105,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 105 */
-/*!**********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/radioGroup.js ***!
-  \**********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/radioGroup.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18143,9 +18143,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 106 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/rate.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/rate.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18177,9 +18177,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 107 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/readMore.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/readMore.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18207,9 +18207,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 108 */
-/*!***************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/row.js ***!
-  \***************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/row.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18232,9 +18232,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 109 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/rowNotice.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/rowNotice.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18261,9 +18261,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 110 */
-/*!**********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/scrollList.js ***!
-  \**********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/scrollList.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18289,9 +18289,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 111 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/search.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/search.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18334,9 +18334,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 112 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/section.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/section.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18366,9 +18366,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 113 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/skeleton.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/skeleton.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18399,9 +18399,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 114 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/slider.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/slider.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18432,9 +18432,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 115 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/statusBar.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/statusBar.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18455,9 +18455,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 116 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/steps.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/steps.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18484,9 +18484,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 117 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/stepsItem.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/stepsItem.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18510,9 +18510,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 118 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/sticky.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/sticky.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18538,9 +18538,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 119 */
-/*!**********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/subsection.js ***!
-  \**********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/subsection.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18569,9 +18569,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 120 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/swipeAction.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/swipeAction.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18592,9 +18592,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 121 */
-/*!***************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
-  \***************************************************************************************/
+/*!************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/swipeActionItem.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18621,9 +18621,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 122 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/swiper.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/swiper.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18667,9 +18667,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 123 */
-/*!****************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
-  \****************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/swipterIndicator.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18694,9 +18694,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 124 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/switch.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/switch.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18726,9 +18726,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 125 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/tabbar.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/tabbar.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18756,9 +18756,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 126 */
-/*!**********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/tabbarItem.js ***!
-  \**********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/tabbarItem.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18784,9 +18784,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 127 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/tabs.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/tabs.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18823,9 +18823,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 128 */
-/*!***************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/tag.js ***!
-  \***************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/tag.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18860,9 +18860,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 129 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/text.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/text.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18905,9 +18905,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 130 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/textarea.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/textarea.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18949,9 +18949,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 131 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/toast.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/toast.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18986,9 +18986,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 132 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/toolbar.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/toolbar.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19014,9 +19014,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 133 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/tooltip.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/tooltip.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19047,9 +19047,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 134 */
-/*!**********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/transition.js ***!
-  \**********************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/transition.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19073,9 +19073,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 135 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/props/upload.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/props/upload.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19117,9 +19117,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 136 */
-/*!************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/config/zIndex.js ***!
-  \************************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/config/zIndex.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19146,9 +19146,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 137 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/libs/function/platform.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/libs/function/platform.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19231,9 +19231,9 @@ platform;exports.default = _default;
 
 /***/ }),
 /* 138 */
-/*!***********************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/index.js ***!
-  \***********************************************/
+/*!********************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19314,9 +19314,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 139 */
-/*!**********************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/mixin/mixin.js ***!
-  \**********************************************************/
+/*!*******************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/mixin/mixin.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19390,9 +19390,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 140 */
-/*!*****************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/index.js ***!
-  \*****************************************************************/
+/*!**************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/index.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19402,9 +19402,9 @@ _Request.default;exports.default = _default;
 
 /***/ }),
 /* 141 */
-/*!************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/Request.js ***!
-  \************************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/Request.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19612,9 +19612,9 @@ Request = /*#__PURE__*/function () {
 
 /***/ }),
 /* 142 */
-/*!********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/dispatchRequest.js ***!
-  \********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/dispatchRequest.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19628,9 +19628,9 @@ function _default(config) {
 
 /***/ }),
 /* 143 */
-/*!**************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/adapters/index.js ***!
-  \**************************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/adapters/index.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19738,9 +19738,9 @@ function _default(config) {
 
 /***/ }),
 /* 144 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/helpers/buildURL.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/helpers/buildURL.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19817,9 +19817,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 145 */
-/*!*****************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/utils.js ***!
-  \*****************************************************************/
+/*!**************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/utils.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19962,9 +19962,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 146 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/buildFullPath.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/buildFullPath.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19992,9 +19992,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 147 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/helpers/isAbsoluteURL.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20016,9 +20016,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 148 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/helpers/combineURLs.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/helpers/combineURLs.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20040,9 +20040,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 149 */
-/*!***********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/settle.js ***!
-  \***********************************************************************/
+/*!********************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/settle.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20066,9 +20066,9 @@ function settle(resolve, reject, response) {
 
 /***/ }),
 /* 150 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/InterceptorManager.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/InterceptorManager.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20127,9 +20127,9 @@ InterceptorManager;exports.default = _default;
 
 /***/ }),
 /* 151 */
-/*!****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/mergeConfig.js ***!
-  \****************************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/mergeConfig.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20240,9 +20240,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 
 /***/ }),
 /* 152 */
-/*!*************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/core/defaults.js ***!
-  \*************************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/core/defaults.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20279,9 +20279,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 153 */
-/*!***********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/luch-request/utils/clone.js ***!
-  \***********************************************************************/
+/*!********************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/luch-request/utils/clone.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20550,13 +20550,13 @@ var clone = function () {
 }();var _default =
 
 clone;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../HBuilderX/plugins/uniapp-cli/node_modules/buffer/index.js */ 31).Buffer))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../hbuilderx/plugins/uniapp-cli/node_modules/buffer/index.js */ 31).Buffer))
 
 /***/ }),
 /* 154 */
-/*!***************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/updateCustomBarInfo.js ***!
-  \***************************************************************************/
+/*!************************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/updateCustomBarInfo.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20609,9 +20609,9 @@ updateCustomBarInfo;exports.default = _default;
 
 /***/ }),
 /* 155 */
-/*!******************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/colorUtils.js ***!
-  \******************************************************************/
+/*!***************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/colorUtils.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20888,9 +20888,9 @@ function colorToRGBA(color) {var alpha = arguments.length > 1 && arguments[1] !=
 
 /***/ }),
 /* 156 */
-/*!********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/messageUtils.js ***!
-  \********************************************************************/
+/*!*****************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/messageUtils.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20972,9 +20972,9 @@ function closeLoading() {
 
 /***/ }),
 /* 157 */
-/*!************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/uuid.js ***!
-  \************************************************************/
+/*!*********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/uuid.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21023,9 +21023,9 @@ uuid;exports.default = _default;
 
 /***/ }),
 /* 158 */
-/*!*************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/array.js ***!
-  \*************************************************************/
+/*!**********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/array.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21054,9 +21054,9 @@ function isArray(arr) {
 
 /***/ }),
 /* 159 */
-/*!************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/test.js ***!
-  \************************************************************/
+/*!*********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/test.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21295,9 +21295,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 /* 160 */
-/*!***************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/$parent.js ***!
-  \***************************************************************/
+/*!************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/$parent.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21323,9 +21323,9 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 
 /***/ }),
 /* 161 */
-/*!**************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/string.js ***!
-  \**************************************************************/
+/*!***********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/string.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21395,9 +21395,9 @@ function charConvertHump(string) {var replace = arguments.length > 1 && argument
 
 /***/ }),
 /* 162 */
-/*!**************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/number.js ***!
-  \**************************************************************/
+/*!***********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/number.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21516,9 +21516,9 @@ function random(min, max) {
 
 /***/ }),
 /* 163 */
-/*!*****************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/function/deepClone.js ***!
-  \*****************************************************************/
+/*!**************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/function/deepClone.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21555,9 +21555,9 @@ deepClone;exports.default = _default;
 
 /***/ }),
 /* 164 */
-/*!************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/config/zIndex.js ***!
-  \************************************************************/
+/*!*********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/config/zIndex.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21579,9 +21579,9 @@ var _default = {
 
 /***/ }),
 /* 165 */
-/*!***********************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/config/color.js ***!
-  \***********************************************************/
+/*!********************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/config/color.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21603,9 +21603,9 @@ var _default = {
 
 /***/ }),
 /* 166 */
-/*!*********************************************!*\
-  !*** D:/文档/项目/uniapp/test/common/common.js ***!
-  \*********************************************/
+/*!******************************************!*\
+  !*** D:/桌面/uniapp/test/common/common.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21615,9 +21615,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 167 */
-/*!**********************************************!*\
-  !*** D:/文档/项目/uniapp/test/store/$t.mixin.js ***!
-  \**********************************************/
+/*!*******************************************!*\
+  !*** D:/桌面/uniapp/test/store/$t.mixin.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21711,9 +21711,9 @@ module.exports = {
 /* 226 */,
 /* 227 */,
 /* 228 */
-/*!*********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-back-top/props.js ***!
-  \*********************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-back-top/props.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21780,9 +21780,9 @@ module.exports = {
 /* 234 */,
 /* 235 */,
 /* 236 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-tabbar/props.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-tabbar/props.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21839,9 +21839,9 @@ module.exports = {
 /* 242 */,
 /* 243 */,
 /* 244 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-tabbar-item/props.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-tabbar-item/props.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21895,9 +21895,9 @@ module.exports = {
 /* 257 */,
 /* 258 */,
 /* 259 */
-/*!*********************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/tuniao-ui/libs/mixin/components_color.js ***!
-  \*********************************************************************/
+/*!******************************************************************!*\
+  !*** D:/桌面/uniapp/test/tuniao-ui/libs/mixin/components_color.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -21955,9 +21955,9 @@ module.exports = {
 /* 265 */,
 /* 266 */,
 /* 267 */
-/*!*******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-search/props.js ***!
-  \*******************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-search/props.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22088,9 +22088,9 @@ module.exports = {
 /* 273 */,
 /* 274 */,
 /* 275 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-icon/icons.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-icon/icons.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22311,9 +22311,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 276 */
-/*!*****************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-icon/props.js ***!
-  \*****************************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-icon/props.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22436,9 +22436,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 303 */,
 /* 304 */,
 /* 305 */
-/*!***********************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-transition/props.js ***!
-  \***********************************************************************************/
+/*!********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-transition/props.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22468,9 +22468,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 306 */
-/*!****************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-transition/transition.js ***!
-  \****************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-transition/transition.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22631,9 +22631,9 @@ var getClassNames = function getClassNames(name) {return {
 
 /***/ }),
 /* 307 */
-/*!******************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
-  \******************************************************************************************/
+/*!***************************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22714,9 +22714,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 313 */,
 /* 314 */,
 /* 315 */
-/*!************************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-safe-bottom/props.js ***!
-  \************************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-safe-bottom/props.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22733,9 +22733,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 321 */,
 /* 322 */,
 /* 323 */
-/*!******************************************************************************!*\
-  !*** D:/文档/项目/uniapp/test/node_modules/uview-ui/components/u-badge/props.js ***!
-  \******************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/桌面/uniapp/test/node_modules/uview-ui/components/u-badge/props.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

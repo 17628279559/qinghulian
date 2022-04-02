@@ -266,8 +266,6 @@ view.data-v-1a326067, scroll-view.data-v-1a326067, swiper-item.data-v-1a326067 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 90%;
-  display: inline-flex;
   flex: 1;
 }
 .u-search__content.data-v-1a326067 {
@@ -309,7 +307,7 @@ view.data-v-1a326067, scroll-view.data-v-1a326067, swiper-item.data-v-1a326067 {
 }
 .u-search__content__input.data-v-1a326067 {
   flex: 1;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1;
   margin: 0 5px;
   color: #303133;

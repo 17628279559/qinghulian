@@ -373,7 +373,7 @@
 .founded__content__like__left__image.data-v-5f6b684c {
   display: inline-flex;
   width: 30rpx;
-  height: 30rpx;
+  height: 28rpx;
 }
 .founded__content__like__left__txt.data-v-5f6b684c {
   color: #838383;
@@ -386,13 +386,13 @@
 }
 .founded__content__like__middle__image.data-v-5f6b684c {
   width: 30rpx;
-  height: 30rpx;
+  height: 28rpx;
 }
 .founded__content__like__right.data-v-5f6b684c {
   margin-left: 70rpx;
 }
 .founded__content__like__right__image.data-v-5f6b684c {
   width: 30rpx;
-  height: 30rpx;
+  height: 28rpx;
 }
 

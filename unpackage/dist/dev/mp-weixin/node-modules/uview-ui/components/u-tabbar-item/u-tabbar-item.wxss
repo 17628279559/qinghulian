@@ -278,7 +278,7 @@ view.data-v-b8fe2b06, scroll-view.data-v-b8fe2b06, swiper-item.data-v-b8fe2b06 {
 }
 .u-tabbar-item__text.data-v-b8fe2b06 {
   margin-top: 2px;
-  font-size: 10px;
+  font-size: 12px;
   color: #606266;
 }
 .data-v-b8fe2b06:host {

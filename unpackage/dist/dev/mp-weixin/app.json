@@ -17,6 +17,5 @@
   },
   "usingComponents": {
     "my-tabbar": "/components/tabbar/tabbar"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

@@ -45,15 +45,15 @@
 						</view>
 						<view class="founded__content__like">
 							<view class="founded__content__like__left">
-								<image class="founded__content__like__left__image" src="/static/like/share/1.png"></image>
+								<image class="founded__content__like__left__image" src="/static/like/share/1.png" @click="share"></image>
 								<text class="founded__content__like__left__txt">{{item.share}}</text>
 							</view>
 							<view class="founded__content__like__middle">
-								<image class="founded__content__like__middle__image" src="/static/like/talk/1.png"></image>
+								<image class="founded__content__like__middle__image" src="/static/like/talk/1.png"  @click="talk"></image>
 								<text class="founded__content__like__left__txt">{{item.talk}}</text>
 							</view>							
 							<view class="founded__content__like__right">
-								<image class="founded__content__like__right__image" src="/static/like/like/1.png"></image>
+								<image class="founded__content__like__right__image" src="/static/like/like/1.png" @click="like"></image>
 								<text class="founded__content__like__left__txt">{{item.like}}</text>
 							</view>
 						</view>
@@ -176,7 +176,20 @@
 		},
 		methods: {
 			tabChange(index) {
-			  this.current = index
+			  this.current = index;
+			  uni.pageScrollTo({
+			           scrollTop: 0, //距离页面顶部的距离
+			           duration: 0,
+			  });
+			},
+			share(){
+				
+			},
+			talk(){
+				
+			},
+			share(){
+				
 			}
 		}
 	}
@@ -311,7 +324,7 @@
 					&__image{
 						display: inline-flex;
 						width: 30rpx;
-						height:30rpx;
+						height:28rpx;
 					}
 					&__txt{
 						color: #838383;
@@ -324,14 +337,14 @@
 					margin-left: 70rpx;
 					&__image{
 						width: 30rpx;
-						height:30rpx;
+						height:28rpx;
 					}
 				}
 				&__right{
 					margin-left: 70rpx;
 					&__image{
 						width: 30rpx;
-						height:30rpx;
+						height:28rpx;
 					}
 				}
 			}
