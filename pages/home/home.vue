@@ -19,7 +19,6 @@
 			</view>
 		</view>
 		<demo-title>  <!--滑动展示 -->
-
 			<tn-swiper 
 				style="height:300"
 				:list="list" 
@@ -40,10 +39,9 @@
 			<u-search 
 			:show-action="false" 
 			bgColor="#F6F6F6" 
-
 			placeholder="搜索" 
 			searchIconSize=16
-			height =12
+			height =10
 			margin="0rpx 0rpx 0rpx 20rpx"></u-search>
 		</view>
 		<view v-for="(item, index) in news" :key="index">
@@ -222,12 +220,12 @@
 	}
 
 	.search-box{
+		display: flex;
 		margin-top: 20rpx;
 		margin-left: 15rpx;
 		margin-right: 15rpx;
 		
 		&__content-icon{
-			margin-bottom:10rpx;
 			width: 50rpx;
 			height: 50rpx;
 			vertical-align:middle;

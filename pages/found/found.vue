@@ -1,6 +1,6 @@
 <template>
 	<view class="foundPage">
-		<tn-nav-bar :height="140" backIcon="search" fixed>		
+		<tn-nav-bar :height="160" backIcon="search" fixed>		
 			<view class="foundPage__content">
 				<tn-tabs :list="fixedList" :current="current" :isScroll="true" :showBar="true" inactiveColor="#838383" gutter="30" activeColor="#95EC6A" @change="tabChange"></tn-tabs>
 			</view>
@@ -164,7 +164,7 @@
 		}
 		
 		&__hidden{
-			margin-top:130rpx;
+			margin-top:150rpx;
 			display: none;
 		}
 		

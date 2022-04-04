@@ -114,6 +114,5 @@
 		height: 120rpx !important;
 		overflow: hidden;
 		border-radius: 50%;
-		box-shadow: 0rpx 0rpx 20rpx 0rpx rgba(69, 156, 26, 0.3);
 	}
 </style>

@@ -142,7 +142,6 @@
 <style lang="scss" scoped>
   
   .tn-scroll-list {
-    padding-bottom: 20rpx;
     
     &__scroll-view {
       display: flex;
