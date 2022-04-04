@@ -61,7 +61,7 @@
 					</view>
 				</view>
 				<view class="published__massage-image-box">
-					<image class="published__massage-image-box__image" :src="item.contentImg" mode="aspectFill" >
+					<image class="published__massage-image-box__image" :src="item.contentImg" mode="aspectFill">
 				</view>
 			</view>
 			<view class="border-content tn-border-solid-top suspend-button-size"></view>

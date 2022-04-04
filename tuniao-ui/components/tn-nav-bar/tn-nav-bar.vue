@@ -21,7 +21,7 @@
           </view>
         </view>
         <view v-else class="tn-custom-nav-bar__bar__action" @tap="handlerBack">
-			<u-icon :name="backIcon" size="28"></u-icon>
+			<u-icon :name="backIcon" :size="barsize"></u-icon>
         	<text class="tn-custom-nav-bar__bar__action--nav-back-text" v-if="backTitle">{{ backTitle }}</text>
         </view>
       </view>
@@ -46,6 +46,10 @@
         type: Number,
         default: 0
       },
+	  barsize: {
+		type:Number,
+		default:28  
+	  },
       // 导航栏的高度
       height: {
         type: Number,
@@ -158,7 +162,7 @@
             const width = (this.customBackStyleInfo.width + this.customBackStyleInfo.left) * 2
             style.width = `calc(100% - ${width}px)`
           } else {
-            style.width = 'calc(100% - 340rpx)'
+            style.width = 'calc(100% - 180rpx)'
           }
         } else {
           style.width = '100%'
@@ -277,17 +281,14 @@
     position: relative;
     
     &__bar {
-      display: flex;
+      display: inline-flex;
       position: relative;
       align-items: center;
       min-height: 100rpx;
       justify-content: space-between;
       min-height: 0px;
       /* #ifdef MP-WEIXIN */
-      padding-right: 220rpx;
-      /* #endif */
-      /* #ifdef MP-ALIPAY */
-      padding-right: 150rpx;
+      padding-right: 0rpx;
       /* #endif */
       box-shadow: 0rpx 0rpx 0rpx;
       z-index: 9999;

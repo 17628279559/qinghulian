@@ -7,12 +7,13 @@ import TuniaoUI from 'tuniao-ui'
 import member from './common/common.js'
 
 Vue.config.productionTip = false
-import tabbar from "@/components/tabbar/tabbar.vue";
+import attention from "@/components/attention/attention.vue"
 
 let vuexStore = require('@/store/$t.mixin.js')
 Vue.mixin(vuexStore)
 
-Vue.component("my-tabbar", tabbar);
+
+Vue.component("my-attention",attention);
 Vue.use(uView)
 Vue.use(TuniaoUI)
 Vue.prototype.$member = member;

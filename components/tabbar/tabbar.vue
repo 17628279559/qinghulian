@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<u-tabbar
-			:value="pageValue"
-			@change="changebar"
+			:value="pageNum"
+			@change="switchTabbar"
 			:fixed="true"
 			:placeholder="true"
 			:border="false"
@@ -86,15 +86,12 @@
 
 <script>
 	export default {
-		props:["pageValue"],
+		props:["pageNum","switchTabbar"],
 		data() {
 			return {
 			}
 		},
 		methods: {
-			changebar(name){
-				this.$member.pageValue = name
-			}
 		}
 	}
 </script>

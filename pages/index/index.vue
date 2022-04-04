@@ -2,8 +2,9 @@
 	<view>
 		<Home v-if="pageNum === 0"></Home>
 		<Found v-if="pageNum === 1"></Found>
-		<Guide v-if="pageNum === 2"></Guide>
-		<Mine v-if="pageNum === 3"></Mine>
+		<Release v-if="pageNum === 2"></Release>
+		<Guide v-if="pageNum === 3"></Guide>
+		<Mine v-if="pageNum === 4"></Mine>
 		
 		<u-back-top :scroll-top="scrollTop" icon="arrow-up"></u-back-top>
 		<u-tabbar
@@ -93,12 +94,14 @@
 <script>
 	import Home from "../home/home.vue"
 	import Found from "../found/found.vue"
+	import Release from "../release/release.vue"
 	import Guide from "../guide/guide.vue"
 	import Mine from "../mine/mine.vue"
 export default {
 	components: {
 	    Home,
 	    Found,
+		Release,
 	    Guide,
 	    Mine
 	  },

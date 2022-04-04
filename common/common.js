@@ -1,3 +1,3 @@
 export default {
-    pageValue:0,
+    pageNum:0,
 }
