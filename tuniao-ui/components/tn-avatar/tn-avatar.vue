@@ -76,7 +76,7 @@
       // 边框颜色
       borderColor: {
         type: String,
-        default: 'rgba(0, 0, 0, 0.1)'
+        default: 'rgba(255, 255, 255, 0.9)'
       },
       // 边框大小, rpx
       borderSize: {

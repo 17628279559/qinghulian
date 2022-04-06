@@ -204,7 +204,7 @@
 <style lang="scss" scoped>
   
   .tn-notice-bar {
-
+	box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.09);
     overflow: hidden;
   }
 </style>

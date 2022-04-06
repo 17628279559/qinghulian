@@ -27,7 +27,7 @@
 		<demo-title>  <!--滚动通知信息 -->
 		  <tn-notice-bar 
 			:list="list.map(item=>item['text'])"
-			backgroundColor="#F6F6F6" 
+			backgroundColor="#FFFFFF" 
 			mode="vertical" 
 			radius=50
 			fontSize=22
@@ -37,7 +37,7 @@
 			<image class="search-box__content-icon" src="/static/list.png"></image>
 			<u-search 
 			:show-action="false" 
-			bgColor="#F6F6F6" 
+			bgColor="#FFFFFF" 
 			placeholder="搜索" 
 			searchIconSize=16
 			height =10
@@ -224,7 +224,6 @@
 		margin-top: 20rpx;
 		margin-left: 15rpx;
 		margin-right: 15rpx;
-		
 		&__content-icon{
 			width: 50rpx;
 			height: 50rpx;
