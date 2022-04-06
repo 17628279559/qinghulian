@@ -173,7 +173,6 @@
 		}
 	}
 	.topSearch{
-		color: "#FFFFFF";
 		border-radius: 20rpx;
 		box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.09);
 		margin: 40rpx;

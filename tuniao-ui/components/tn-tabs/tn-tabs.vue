@@ -49,6 +49,10 @@
         type: String,
         default: 'count'
       },
+	  barBottom: {
+		  type: String,
+		  default: '60rpx'
+	  },
       // 当前活动的tab索引
       current: {
         type: Number,
@@ -146,7 +150,8 @@
           backgroundColor: this.activeColor,
           opacity: this.barMoveFirst ? 0 : 1,
           transform: `translate(${this.tnscrollBarLeft}px, -100%)`,
-          transitionDuration: this.barMoveFirst ? '0s' : `${this.duration}s`
+          transitionDuration: this.barMoveFirst ? '0s' : `${this.duration}s`,
+		  bottom: this.barBottom,
         }
         Object.assign(style, this.barStyle)
         return style
@@ -333,7 +338,6 @@
     
     &__bar {
       position: absolute;
-      bottom: 60rpx;
     }
   }
 </style>

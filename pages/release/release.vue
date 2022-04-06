@@ -11,8 +11,8 @@
 			  <view class="tn-flex tn-margin-sm">
 			    <block v-for="(item, index) in tag" :key="index">
 					<view class="tag" @click="changetag(item)">
-						<tn-tag v-if="index === chose" :width="getTagWidth(item.value.length)" backgroundColor="tn-cool-bg-color-7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
-						<tn-tag v-else :plain="true" :width="getTagWidth(item.value.length)" backgroundColor="#848484" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
+						<tn-tag v-if="index === chose" :width="getTagWidth(item.value.length)" size="sm" backgroundColor="tn-cool-bg-color-7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
+						<tn-tag v-else :plain="true" :width="getTagWidth(item.value.length)" size="sm" backgroundColor="#848484" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
 					</view>
 			    </block>
 			  </view>

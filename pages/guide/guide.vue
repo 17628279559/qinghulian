@@ -7,17 +7,44 @@
 				<image class="head__right-icon" src="/static/right.png" mode="aspectFit" >
 			</view>
 		</tn-nav-bar>
+		<view class="description">
+			<view>
+				地标一览
+			</view>
+		</view>
 		<view class="campus-icon">
 			<tn-grid :align="align" :hoverClass="hoverClass">
 			  <block v-for="(item, cindex) in campusIcon" :key="cindex">
 			    <tn-grid-item style="width: 25%;">
 			      <view class="campus-icon__item" >
-			        <image class="campus-icon__item__image" :src="[`https://code.zwt666.top/img/map/${item.url}.png`]" mode="aspectFit"></image>
+			        <image class="campus-icon__item__image" :src="[`https://code.zwt666.top/img/map/${item.url}.png`]" mode="aspectFit" @click="openModal(item.name)"></image>
 			      </view>
 			    </tn-grid-item>
 			  </block>
 			</tn-grid>
 		</view>
+		<tn-modal
+		  v-model="show"
+		  :width="width"
+		  :radius="radius"
+		  :fontSize="fontSize"
+		  :showCloseBtn="true"
+		  :maskCloseable="true"
+		  :zoom="true"
+		  :custom="true"
+		>
+			<view class="modal-tuqi">
+				<view class="modal-tuqi__title">
+					{{content}}
+				</view>
+				<image class="modal-tuqi__image" src="https://code.zwt666.top/img/tsg.jpg"></image>
+				<view class="modal-tuqi__description">
+					又名“中传大阅城” 开放自习座位、研讨间。开放时间：8:00 - 22:30,特殊节假日另行通知
+				</view>
+				<a class="modal-tuqi__link" href="#">点击跳转公众号</a>
+			</view>
+		</tn-modal>
+		
 		
 		<tn-toast ref="toast"></tn-toast>
 		
@@ -28,6 +55,11 @@
 	export default {
 		data() {
 			return {
+				content:"",
+				show: false,
+				width: '80%',
+				radius: 12,
+				fontSize:30,
 				university_location:"中国传媒大学",
 				hoverClass: 'tn-hover',
 				align:'center',
@@ -88,9 +120,13 @@
 				content: "左右滑动查看更多",
 				icon: "",
 				image: "",
-			    duration: 1000
+			    duration: 2000
 			  })
-			}
+			},
+			openModal(name) {
+			  this.show = true;
+			  this.content = name;
+			},
 		}
 	}
 </script>
@@ -124,14 +160,25 @@
 			vertical-align:bottom;
 		}
 	}
+	.description{
+		margin:30rpx;
+		margin-top: 190rpx;
+		whith:100%;
+		display: flex;
+		justify-content:center;
+	}
 	.campus-icon{
-		margin:200rpx 30rpx;
+		display: block;
+		margin-top:15rpx;
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+		margin-bottom: 80rpx;
 		&__item{
-			width: 100rpx;
-			height: 100rpx;
-			font-size: 60rpx;
+			width: 90rpx;
+			height: 90rpx;
+			font-size: 50rpx;
 			border-radius: 10rpx;
-			margin: 18rpx 30rpx;
+			margin: 25rpx 25rpx;
 			position: relative;
 			z-index: 1;
 			
@@ -156,5 +203,30 @@
 			}
 		}
 	}
-	
+	.modal-tuqi{
+		width: 100%;
+		margin-top: 35rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap:wrap;
+		&__title{
+			font-size: 30rpx;
+			margin-bottom: 15rpx;
+		}
+		&__image{
+			width:500rpx;
+			height: 280rpx;
+		}
+		&__description{
+			margin:15rpx 0;
+		}
+		
+		&__link{
+			width:100%;
+			font-size: 24rpx;
+			color:#95EC6A;
+			text-decoration: underline;
+		}
+	}
 </style>

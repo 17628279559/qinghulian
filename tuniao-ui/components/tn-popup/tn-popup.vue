@@ -30,6 +30,9 @@
       @tap.stop.prevent
     >
       <!-- 居中时候的内容 -->
+	  <view style="z-index: 30000;position: relative;width: 120rpx;height: 120rpx;border-radius: 60rpx;margin:0 auto;background-color: #FFF;top:60rpx">
+	  	<image src="/static/tabbar-icons/guide/2.png" style="width: 110rpx;height: 110rpx;margin: 5rpx;z-index: 30001;"></image>
+	  </view>
       <view
         v-if="mode === 'center'"
         class="tn-popup__content__center_box"
@@ -137,7 +140,7 @@
       // zIndex
       zIndex: {
         type: Number,
-        default: 0
+        default: 50
       },
       // 是否显示关闭按钮
       closeBtn: {
