@@ -21,7 +21,8 @@
           </view>
         </view>
         <view v-else class="tn-custom-nav-bar__bar__action" @tap="handlerBack">
-			<u-icon :name="backIcon" :size="barsize"></u-icon>
+			<u-icon v-if="useUicon" :name="backIcon" :size="barsize"></u-icon>
+			<view v-else class="tn-custom-nav-bar__bar__action--nav-back" :class="[`tn-icon-${backIcon}`]" ></view>
         	<text class="tn-custom-nav-bar__bar__action--nav-back-text" v-if="backTitle">{{ backTitle }}</text>
         </view>
       </view>
@@ -49,6 +50,10 @@
 	  barsize: {
 		type:Number,
 		default:28  
+	  },
+	  useUicon:{
+		  type: Boolean,
+		  default:true
 	  },
       // 导航栏的高度
       height: {
@@ -261,7 +266,9 @@
             })
           } else {
             uni.navigateBack({
-              delta: 1
+              delta: 1,
+			  animationType: 'slide-out-bottom',
+			  animationDuration: 200
             })
           }
         } else {

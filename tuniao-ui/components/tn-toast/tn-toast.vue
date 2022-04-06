@@ -110,6 +110,7 @@
           this.$emit('closed')
           return
         }
+		console.log(11)
         
         this.visible = true
         this.title = title
@@ -179,7 +180,7 @@
     }
     
     &__text {
-      font-size: 28rpx;
+      font-size: 26rpx;
       line-height: 28rpx;
       color: #ffffff;
       text-align: center;

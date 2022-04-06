@@ -2,7 +2,6 @@
 	<view>
 		<Home v-if="pageNum === 0"></Home>
 		<Found v-if="pageNum === 1"></Found>
-		<Release v-if="pageNum === 2"></Release>
 		<Guide v-if="pageNum === 3"></Guide>
 		<Mine v-if="pageNum === 4"></Mine>
 		
@@ -104,8 +103,8 @@ export default {
 		Release,
 	    Guide,
 	    Mine
-	  },
-	  data() {
+	},
+	data() {
 	    return {
 		// tabbar当前被选中的序号
 		  pageNum:0,
@@ -113,12 +112,12 @@ export default {
 	      // 自定义底栏对应页面的加载情况
 	      tabberPageLoadFlag: []
 	    }
-	  },
-	  onLoad(options) {
-	    const index = Number(options.index || 0)
-	    // 根据底部tabbar菜单列表设置对应页面的加载情况
-	    this.switchTabbar(index)
-	  },
+	},
+	onLoad(options) {
+	    // const index = Number(options.index || 0)
+	    // // 根据底部tabbar菜单列表设置对应页面的加载情况
+	    // this.switchTabbar(index)
+	},
 	onPageScroll(e) {
 		this.scrollTop = e.scrollTop;
 	},
@@ -127,11 +126,20 @@ export default {
     methods: {
       // 切换导航
       async switchTabbar(index) {
-        await this._switchTabbarPage(index); 
-		uni.pageScrollTo({
-		         scrollTop: 0, //距离页面顶部的距离
-		         duration: 0,
-		});
+		if(index!==2){
+			await this._switchTabbarPage(index);
+			uni.pageScrollTo({
+			         scrollTop: 0, //距离页面顶部的距离
+			         duration: 0,
+			});
+		}
+		else{
+			uni.navigateTo({
+				url:"../release/release",
+				animationType: 'slide-in-bottom',
+				animationDuration: 100
+			})
+		}
       },
       
       // 导航页面滚动到底部
@@ -153,12 +161,13 @@ export default {
 		display: block;
 		height: 55rpx;
 		font-size: 30rpx;
+		margin-bottom:10rpx;
 	}
 	  
 	.bar-circle {
 		position: relative;
 		display: block;
-		margin-bottom: 55rpx;
+		margin-bottom: 70rpx;
 		line-height: 120rpx;
 		width: 120rpx !important;
 		height: 120rpx !important;

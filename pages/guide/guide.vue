@@ -1,6 +1,26 @@
 <template>
 	<view>
-		<view>导航</view>
+		<tn-nav-bar :height="160" :isBack="false" fixed>
+			<view class="head">
+				<image class="head__img" src="/static/location.png" mode="aspectFit" >
+				<view class="head__text">{{university_location}}</view>
+				<image class="head__right-icon" src="/static/right.png" mode="aspectFit" >
+			</view>
+		</tn-nav-bar>
+		<view class="campus-icon">
+			<tn-grid :align="align" :hoverClass="hoverClass">
+			  <block v-for="(item, cindex) in campusIcon" :key="cindex">
+			    <tn-grid-item style="width: 25%;">
+			      <view class="campus-icon__item" >
+			        <image class="campus-icon__item__image" :src="[`https://code.zwt666.top/img/map/${item.url}.png`]" mode="aspectFit"></image>
+			      </view>
+			    </tn-grid-item>
+			  </block>
+			</tn-grid>
+		</view>
+		
+		<tn-toast ref="toast"></tn-toast>
+		
 	</view>
 </template>
 
@@ -8,14 +28,133 @@
 	export default {
 		data() {
 			return {
+				university_location:"中国传媒大学",
+				hoverClass: 'tn-hover',
+				align:'center',
+				campusIcon:[
+					{index:0,name:"校医院",url:"xyy"},
+					{index:1,name:"33号楼",url:"x/33h"},
+					{index:2,name:"32号楼",url:"x/32h"},
+					{index:3,name:"44号楼",url:"x/44h"},
+					{index:4,name:"北苑食堂",url:"eat/north"},
+					{index:5,name:"31号楼",url:"x/31h"},
+					{index:6,name:"图书馆",url:"tsg"},
+					{index:7,name:"45号楼",url:"x/45h"},
+					{index:8,name:"办公楼",url:"x/bgl"},
+					{index:9,name:"博学楼",url:"bxl"},
+					{index:10,name:"钢琴湖",url:"gqh"},
+					{index:11,name:"52号楼",url:"x/52h"},
+					{index:12,name:"草地",url:"cd"},
+					{index:13,name:"草地",url:"cd"},
+					{index:14,name:"星光超市",url:"eat/lighting"},
+					{index:15,name:"53号楼",url:"x/53h"},
+					{index:16,name:"草地",url:"cd"},
+					{index:17,name:"草地",url:"cd"},
+					{index:18,name:"草地",url:"cd"},
+					{index:19,name:"草地",url:"cd"},
+					{index:20,name:"草地",url:"cd"},
+					{index:21,name:"明德楼",url:"mdl"},
+					{index:22,name:"草地",url:"cd"},
+					{index:23,name:"28号楼",url:"x/28h"},
+					{index:24,name:"电视台",url:"dst"},
+					{index:25,name:"明德湖",url:"mdh"},
+					{index:26,name:"草地",url:"cd"},
+					{index:27,name:"草地",url:"cd"},
+					{index:28,name:"草地",url:"cd"},
+					{index:29,name:"立德楼",url:"ldl"},
+					{index:30,name:"29号楼",url:"x/29h"},
+					{index:31,name:"风雨操场",url:"cc"},
+					{index:32,name:"草地",url:"cd"},
+					{index:33,name:"草地",url:"cd"},
+					{index:34,name:"南苑食堂",url:"eat/south"},
+					{index:35,name:"30号楼",url:"x/30h"},
+					{index:36,name:"西配楼",url:"xpl"},
+					{index:37,name:"主楼",url:"zl"},
+					{index:38,name:"东配楼",url:"dpl"},
+					{index:39,name:"24号楼",url:"x/24h"}
+				]
 			}
 		},
+		mounted() {
+			if(!this.$member.isShow){
+				this.openToast();
+			}
+			this.$member.isShow = true;
+		},
 		methods: {
-		
+			openToast() {
+			  this.$refs.toast.show({
+				title: "",
+				content: "左右滑动查看更多",
+				icon: "",
+				image: "",
+			    duration: 1000
+			  })
+			}
 		}
 	}
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+	.head{
+		display: flex;
+		flex: 1;
+		text-align: left;
+		align-items: center;
+		
+		&__img{
+			display: inline-flex;
+			margin: 0 28rpx;
+			width: 40rpx;
+			height: 50rpx;
+			vertical-align:middle;
+		}
+		
+		&__text{
+			font-size: 32rpx;
+			display: inline-flex;
+			vertical-align:bottom;
+		}
+		
+		&__right-icon{
+			width: 30rpx;
+			height: 30rpx;
+			margin-left: 8rpx;
+			display: inline-flex;
+			vertical-align:bottom;
+		}
+	}
+	.campus-icon{
+		margin:200rpx 30rpx;
+		&__item{
+			width: 100rpx;
+			height: 100rpx;
+			font-size: 60rpx;
+			border-radius: 10rpx;
+			margin: 18rpx 30rpx;
+			position: relative;
+			z-index: 1;
+			
+			&::after {
+			  content: " ";
+			  position: absolute;
+			  z-index: -1;
+			  width: 100%;
+			  height: 100%;
+			  left: 0;
+			  bottom: 0;
+			  border-radius: inherit;
+			  opacity: 1;
+			  transform: scale(1, 1);
+			  background-size: 100% 100%;
+			  background-image: url(/static/icon_bg6.png);
+			}
+			
+			&__image{
+				width: 100rpx;
+				height: 100rpx;
+			}
+		}
+	}
+	
 </style>

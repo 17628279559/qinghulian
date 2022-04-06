@@ -185,12 +185,12 @@
       // 预览图片和选择图片区域的宽度
       width: {
         type: Number,
-        default: 200
+        default: 220
       },
       // 预览图片和选择图片区域的高度
       height: {
         type: Number,
-        default: 200
+        default: 220
       },
       // 选择图片的尺寸
       // 参考上传文档 https://uniapp.dcloud.io/api/media/image
@@ -547,14 +547,13 @@
       /* #endif */
       align-items: center;
       justify-content: center;
-      width: 200rpx;
-      height: 200rpx;
+      width: 220rpx;
+      height: 220rpx;
       overflow: hidden;
-      margin: 12rpx;
-      margin-left: 0;
+      margin: 9rpx;
       background-color: $tn-font-holder-color;
       position: relative;
-      border-radius: 10rpx;
+      border-radius: 0rpx;
       
       &-preview {
         border: 1rpx solid $tn-border-solid-color;
@@ -569,7 +568,8 @@
           z-index: 10;
           border-top: 60rpx solid;
           border-left: 60rpx solid transparent;
-          border-top-color: $tn-color-red;
+          border-top-color: #777777;
+		  opacity: 0.4;
           width: 0rpx;
           height: 0rpx;
           
@@ -613,7 +613,7 @@
           display: block;
           width: 100%;
           height: 100%;
-          border-radius: 10rpx;
+          border-radius: 8rpx;
         }
       }
       

@@ -65,7 +65,7 @@
       tipsStyle() {
         let style = {}
         if ((this.position === 'top' || this.position === '') && this.top) {
-          style.top = this.top + 'px'
+          style.top = this.top + 'rpx'
         }
         style.zIndex = (this.zIndex ? this.zIndex : this.$t.zIndex.tips) + 1
         

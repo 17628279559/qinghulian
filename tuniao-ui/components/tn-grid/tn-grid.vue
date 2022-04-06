@@ -16,7 +16,7 @@
       // 分成几列
       col: {
         type: [Number, String],
-        default: 3
+        default: 4
       },
       // 宫格对齐方式 
       // left 左对齐 center 居中对齐 right 右对齐

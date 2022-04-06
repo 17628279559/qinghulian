@@ -20,7 +20,7 @@
 		</view>
 		<demo-title>  <!--滑动展示 -->
 			<tn-swiper 
-				style="height:300"
+				style="height:350"
 				:list="list" 
 				mode="dot"></tn-swiper>
 		</demo-title>
@@ -28,7 +28,6 @@
 		  <tn-notice-bar 
 			:list="list.map(item=>item['text'])"
 			backgroundColor="#F6F6F6" 
-
 			mode="vertical" 
 			radius=50
 			fontSize=22
@@ -194,14 +193,16 @@
 		}
 	}
 	.university-location{
-		height:106rpx;
+		height:80rpx;
+		margin-bottom: 15rpx;
 		display:inline-flex;
 		vertical-align:bottom;
-	
+		align-items: center;
+		
 		&__img{
 			width: 40rpx;
 			height: 50rpx;
-			margin:28rpx;
+			margin:0 28rpx;
 			display:flex;
 		}
 		
@@ -209,13 +210,12 @@
 			font-size: 32rpx;
 			display: flex;
 			justify-content: center;
-			align-items: center;
 		}
 		&__right-icon{
 			width: 30rpx;
 			height: 30rpx;
 			display: flex;
-			margin:41rpx 0rpx 35rpx 8rpx;
+			margin-left: 8rpx;
 		}
 	}
 

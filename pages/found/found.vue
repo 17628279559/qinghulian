@@ -177,7 +177,7 @@
 		border-radius: 20rpx;
 		box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.09);
 		margin: 40rpx;
-		margin-top: 170rpx;
+		margin-top: 190rpx;
 		color:#636363;
 		&__news{
 			display: block;
@@ -191,7 +191,6 @@
 					margin-right: 10rpx;
 				}
 			}
-			
 			
 			&__inline{
 				display: inline-flex;
@@ -214,11 +213,10 @@
 				height:40rpx;
 				margin-left: 20rpx;
 			}
-			
 			&__text{
 				font-size: 30rpx;
 			}
-			
+
 			&__count{
 				font-size: 24rpx;
 				margin-left: 20rpx;

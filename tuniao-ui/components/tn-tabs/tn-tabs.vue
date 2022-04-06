@@ -333,7 +333,7 @@
     
     &__bar {
       position: absolute;
-      bottom: 50rpx;
+      bottom: 60rpx;
     }
   }
 </style>
