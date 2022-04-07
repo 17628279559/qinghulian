@@ -93,14 +93,12 @@
 <script>
 	import Home from "../home/home.vue"
 	import Found from "../found/found.vue"
-	import Release from "../release/release.vue"
 	import Guide from "../guide/guide.vue"
 	import Mine from "../mine/mine.vue"
 export default {
 	components: {
 	    Home,
 	    Found,
-		Release,
 	    Guide,
 	    Mine
 	},
@@ -135,7 +133,7 @@ export default {
 		}
 		else{
 			uni.navigateTo({
-				url:"../release/release",
+				url:"/subpages/release/release",
 				animationType: 'slide-in-bottom',
 				animationDuration: 100
 			})

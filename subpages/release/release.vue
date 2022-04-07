@@ -11,8 +11,8 @@
 			  <view class="tn-flex tn-margin-sm">
 			    <block v-for="(item, index) in tag" :key="index">
 					<view class="tag" @click="changetag(item)">
-						<tn-tag v-if="index === chose" :width="getTagWidth(item.value.length)" size="sm" backgroundColor="tn-cool-bg-color-7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
-						<tn-tag v-else :plain="true" :width="getTagWidth(item.value.length)" size="sm" backgroundColor="#848484" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
+						<tn-tag v-if="index === chose" :width="getTagWidth(item.value.length)"  backgroundColor="tn-cool-bg-color-7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
+						<tn-tag v-else :plain="true" :width="getTagWidth(item.value.length)"  backgroundColor="#848484" margin="0rpx 10rpx" shape="circle">{{item.value}}</tn-tag>
 					</view>
 			    </block>
 			  </view>
@@ -26,8 +26,9 @@
 				<input class="published__title" placeholder="填写标题更容易被看到哦"></text>
 			</view>
 			<view class="border-content tn-border-solid-top"></view>
-			<textarea class="published__text" placeholder="添加正文"></textarea>
-			
+			<view class="published__text">
+				<u--textarea v-model="content" placeholder="添加正文" count autoHeight border="bottom"></u--textarea>
+			</view>
 			<view class="published__chose-image">
 				<tn-image-upload
 				  ref="imageUpload"
@@ -88,6 +89,7 @@
 				show:false,
 				chose:-1,
 				choseTag:"请选择标签",
+				content:"",
 				tag:[
 					{index:0,value:"#组队"},
 					{index:1,value:"#表白"},
@@ -214,12 +216,7 @@
 		}
 		
 		&__text{
-			margin:30rpx 20rpx;
-			height:180rpx;
-			font-size: 30rpx;
-			left:0;
-			right:0;
-			width:auto;
+			margin:30rpx 30rpx;
 		}
 		
 		&__chose-image{

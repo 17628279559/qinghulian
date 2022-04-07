@@ -9,7 +9,7 @@
         :shape="shape"
         :imgMode="imgMode"
         :border="true"
-        :borderSize="4"
+        :borderSize="3"
       ></tn-avatar>
     </view>
   </view>

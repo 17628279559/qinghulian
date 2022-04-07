@@ -75,7 +75,7 @@
 				],
 				foundPageNews:[
 					{
-						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						headerUrl:"https://code.zwt666.top/img/school.webp",
 						name:"中国传媒大学",
 						time:"19:42",
 						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
@@ -85,7 +85,7 @@
 						talk:"123",
 						like:"2532"
 						},{
-						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						headerUrl:"https://code.zwt666.top/img/school.webp",
 						name:"中国传媒大学",
 						time:"19:42",
 						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
@@ -95,7 +95,7 @@
 						talk:"123",
 						like:"2532"
 						},{
-						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						headerUrl:"https://code.zwt666.top/img/school.webp",
 						name:"中国传媒大学",
 						time:"19:42",
 						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
@@ -105,7 +105,7 @@
 						talk:"123",
 						like:"2532"
 						},{
-						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						headerUrl:"https://code.zwt666.top/img/school.webp",
 						name:"中国传媒大学",
 						time:"19:42",
 						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",
@@ -115,7 +115,7 @@
 						talk:"123",
 						like:"2532"
 						},{
-						headerUrl:"https://code.zwt666.top/img/header.jpg",
+						headerUrl:"https://code.zwt666.top/img/school.webp",
 						name:"中国传媒大学",
 						time:"19:42",
 						text:"冰雪小白杨以每一个“我”的爱与热忱汇聚起“我们”的无限能量！谨以短片《我们》纪念“我们”一起向未来的时光，纪念这段义无反顾的青春奔赴",

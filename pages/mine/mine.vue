@@ -53,11 +53,11 @@
 			</view>
 		</view>
 		<view class="content">
-			<image class="content__bgground" :style="{height:`${feedsList.length*230+300}rpx`}" src="/static/bg.png" />
+			<image class="content__bgground" :style="{height:`200rpx`}" src="/static/bg.png" />
 		</view>
 		<tn-tabs barBottom="0rpx" :list="fixedList" :current="mcurrent" :isScroll="false" :showBar="true" inactiveColor="#838383" gutter="30" activeColor="#95EC6A" @change="tabChange"></tn-tabs>
 		<view v-if="groupList.length>0" class="message">
-			<tn-tag fontColor="#FFFFFF" size="sm" width="340rpx" height="68rpx" backgroundColor="#95EC6A" margin="4rpx 5rpx" shape="circle">
+			<tn-tag fontColor="#FFFFFF" size="sm" width="340rpx" height="68rpx" backgroundColor="#95EC6A" margin="6rpx 5rpx" shape="circle" @click="enter_message">
 				<view class="message__header">
 				  <tn-avatar-group size="58rpx" :lists="showGroupList"></tn-avatar-group>
 				</view>
@@ -71,44 +71,27 @@
 		</view>
 		<view class="publishedd">
 			<image class="publishedd__line" src="/static/line.png" />
-			<view class="tn-flex tn-flex-wrap tn-margin-sm">
-				<block v-for="(item, index) in feedsList" :key="index">
-					<view class="" style="width: 50%;">
-						<view class="tn-blogger-content__wrap">
-							<view class="image-pic" :style="'background-image:url(' + item.mainImage + ')'">
-								<view class="image-music">
-								</view>
-							</view> 
-							<view class="tn-blogger-content__label tn-text-justify tn-padding-sm">
-								<text class="tn-blogger-content__label__desc">{{ item.desc }}</text>  
-							</view>
-							<view class="tn-flex tn-flex-row-between tn-flex-col-center tn-padding-left-sm tn-padding-right-sm tn-padding-bottom-sm">
-								<view class="justify-content-item tn-flex tn-flex-col-center">
-									<view>
-										<view class="tn-color-gray">
-											<text class="tn-blogger-content__count-icon tn-icon-flower"></text> 
-											<text class="tn-padding-right-sm">{{ item.collectionCount }}</text>
-											<text class="tn-blogger-content__count-icon tn-icon-message"></text>
-											<text class="tn-padding-right-sm">{{ item.commentCount }}</text>
-											<text class="tn-blogger-content__count-icon tn-icon-like"></text>
-											<text class="">{{ item.likeCount }}</text>
-										</view>
-									</view>
-								</view>
-							</view>
-						</view>
+			<u-waterfall v-model="feedsList">
+				<template v-slot:left="{leftList}">
+					<view v-for="(item, index) in leftList" :key="index">
+						<myWaterFullContent :data="item"></myWaterFullContent>	
 					</view>
-				</block>
-			</view>
+				</template>
+				<template v-slot:right="{rightList}">
+					<view v-for="(item, index) in rightList" :key="index">
+						<myWaterFullContent :data="item"></myWaterFullContent>
+					</view>
+				</template>
+			</u-waterfall>	
 		</view>
 	</view>
 </template>
 
 <script>
-	import WaterfallSns from '@/components/waterfall-sns/waterfall-sns.vue'
+	import myWaterFullContent from '@/components/myWaterFullContent/myWaterFullContent.vue'
 	export default {
 		components: {
-		    WaterfallSns
+		    myWaterFullContent
 		},
 		data() {
 			return {
@@ -125,7 +108,6 @@
 					focus:67,
 					fans:56,
 					praise:127,
-					
 				},
 				fixedList: [
 				  {name: '发布'},
@@ -144,172 +126,52 @@
 				showGroupList:[],
 				feedsList:[
 					  {
-						id:0,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/prototype2.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 999,
-					    commentCount: 999,
-					    likeCount: 999
+					    desc: '测试长度',
+					    mainImage: 'https://code.zwt666.top/img/tsg.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"求助",
 					  },
 					  {
-						id:1,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/prototype1.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/2.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"表白",
 					  },
 					  {
-						id:2,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/computer2.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/header.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"闲置出售",
 					  },
 					  {
-						id:3,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/phonecase1.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/school.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"实习",
 					  },
 					  {
-						id:4,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/phonecase2.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/3.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"交友",
 					  },
 					  {
-						id:5,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '我们都是好孩子',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/watch1.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/1.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"歪比巴卜",
 					  },
 					  {
-						id:6,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/sticker.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/school.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"租房",
 					  },
 					  {
-						id:7,
-					    userAvatar: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg',
-					    userName: '可我会像',
-					    date: '2021年12月20日',
-					    label: ['开源','创意'],
-					    desc: '免费开源可商用组件',
-					    mainImage: 'https://tnuiimage.tnkjapp.com/shop/card.jpg',
-					    viewUser: {
-					      latestUserAvatar: [
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_1.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_2.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_3.jpeg'},
-					        {src: 'https://tnuiimage.tnkjapp.com/blogger/avatar_4.jpeg'},
-					      ],
-					      viewUserCount: 129
-					    },
-					    collectionCount: 265,
-					    commentCount: 22,
-					    likeCount: 62
+					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
+					    mainImage: 'https://code.zwt666.top/img/header.jpg',
+						header_image:"https://code.zwt666.top/img/header.jpg",
+						textType:"十步杀一人",
 					  }
 				]
 				
@@ -321,10 +183,8 @@
 		methods: {
 			tabChange(index) {
 			  this.mcurrent = index;
-			  uni.pageScrollTo({
-			           scrollTop: 0, //距离页面顶部的距离
-			           duration: 0,
-			  });
+			  
+			  // 切换feedsList以达到目的
 			},
 			getGroup(){
 				if(this.groupList.length < 4){
@@ -333,6 +193,14 @@
 				else{
 					this.showGroupList = this.groupList.slice(0,3);
 				}
+			},
+			enter_message(){
+				uni.navigateTo({
+					url: '/subpages/passage/passage',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
 			}
 		}
 	}
@@ -466,13 +334,11 @@
 			height:1000rpx;
 			width:100%;
 			border-radius: 30rpx;
-			box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.09);
 			
 		}
 	}
 	.message{
 		display: flex;
-		flex-direction: row;
 		justify-content: center;
 		
 		&__header{
@@ -484,6 +350,7 @@
 			width: 30rpx;
 			height: 30rpx;
 		}
+		
 	}
 	.publishedd{
 		position: relative;
@@ -493,75 +360,5 @@
 			width:100%;
 			height: 2rpx;
 		}
-	}
-	.tn-blogger-content {
-	  &__wrap {
-	    box-shadow: 0rpx 0rpx 50rpx 0rpx rgba(0, 0, 0, 0.12);
-	    border-radius: 20rpx;
-	    margin: 15rpx;
-	  }
-	  
-	  &__info {
-	    &__btn {
-	      margin-right: -12rpx;
-	      opacity: 0.5;
-	    }
-	  }
-	  
-	  &__label {
-	    &__item {
-	      line-height: 45rpx;
-	      padding: 0 20rpx;
-	      margin: 5rpx 18rpx 0 0;
-	      
-	      &--prefix {
-	        color: #82B2FF;
-	        padding-right: 10rpx;
-	      }
-	    }
-	    
-	    &__desc {
-	      line-height: 35rpx;
-	    }
-	  }
-	  
-	  &__main-image {
-	    border-radius: 16rpx 16rpx 0 0;
-	    
-	    &--1 {
-	      max-width: 690rpx;
-	      min-width: 690rpx;
-	      max-height: 400rpx;
-	      min-height: 400rpx;
-	    }
-	    
-	    &--2 {
-	      max-width: 260rpx;
-	      max-height: 260rpx;
-	    }
-	    
-	    &--3 {
-	      height: 212rpx;
-	      width: 100%;
-	    }
-	  }
-	  
-	  &__count-icon {
-	    font-size: 30rpx;
-	    padding-right: 5rpx;
-	  }
-	}
-	.image-pic{
-	  background-size: cover;
-	  background-repeat:no-repeat;
-	  // background-attachment:fixed;
-	  background-position:top;
-	  border-radius: 20rpx 20rpx 0 0;
-	}
-	.image-music{
-	  padding: 150rpx 0rpx;
-	  font-size: 16rpx;
-	  font-weight: 300;
-	  position: relative;
 	}
 </style>

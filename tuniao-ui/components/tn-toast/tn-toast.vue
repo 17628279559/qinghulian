@@ -110,7 +110,6 @@
           this.$emit('closed')
           return
         }
-		console.log(11)
         
         this.visible = true
         this.title = title

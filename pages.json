@@ -50,7 +50,7 @@
             
         },
 		{
-			"path": "pages/404/404",
+			"path": "subpages/404/404",
 			"style": {
 				"navigationBarTitleText": "页面未找到",
 				"navigationStyle": "custom",
@@ -58,10 +58,18 @@
 			}
 		}
         ,{
-            "path" : "pages/release/release",
+            "path" : "subpages/release/release",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "subpages/passage/passage",
+            "style" :                                                                                    
+            {
                 "navigationStyle": "custom",
                 "enablePullDownRefresh": false
             }

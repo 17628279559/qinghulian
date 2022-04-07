@@ -51,6 +51,10 @@
 		type:Number,
 		default:28  
 	  },
+	  bgcolor: {
+		  type:String,
+		  default:""
+	  },
 	  useUicon:{
 		  type: Boolean,
 		  default:true
@@ -144,7 +148,7 @@
         if (this.fixed) {
           style.paddingTop = this.statusBarHeight + 'px'
         }
-        
+		this.backgroundColor = this.bgcolor;
         if(!this.backgroundColorClass) {
           style.backgroundColor = this.backgroundColor !== '' ? this.backgroundColor : '#FFFFFF'
         }

@@ -76,10 +76,10 @@
 				university_location:"中国传媒大学",
 
 				list: [
-				  {image: '/static/swiper/spring.jpg',text:'春天小赵在改bug'},
-				  {image: '/static/swiper/summer.jpg',text:'夏天小赵在改bug'},
-				  {image: '/static/swiper/autumn.jpg',text:'秋天小赵在改bug'},
-				  {image: '/static/swiper/winter.jpg',text:'冬天小赵在改bug'},
+				  {image: 'https://code.zwt666.top/img/swiper/spring.jpg',text:'春天小赵在改bug'},
+				  {image: 'https://code.zwt666.top/img/swiper/summer.jpg',text:'夏天小赵在改bug'},
+				  {image: 'https://code.zwt666.top/img/swiper/autumn.jpg',text:'秋天小赵在改bug'},
+				  {image: 'https://code.zwt666.top/img/swiper/winter.jpg',text:'冬天小赵在改bug'},
 				],
 				news:[{
 					num:17,
