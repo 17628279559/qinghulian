@@ -5,7 +5,7 @@
 			<view>
 				<image class="myWaterFullContent__info__image" :src="data.header_image" mode="aspectFill"></image>
 			</view>
-			<text class="myWaterFullContent__info__text">{{data.textType}} | {{ data.desc.length < 12 ? data.desc : data.desc.slice(0,12)+"..."  }}</text>
+			<text class="myWaterFullContent__info__text">{{data.textType}} | {{ data.text.length < 12 ? data.text : data.text.slice(0,12)+"..."  }}</text>
 		</view>
 	</view>
 </template>

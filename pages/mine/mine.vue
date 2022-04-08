@@ -20,7 +20,7 @@
 				</view>
 			</view>
 			<view class="user-info__school">
-				<image class="user-info__school__img" :src="user.school_image" mode="aspectFill"></image>
+				<image class="user-info__school__img" :src="user.school_id" mode="aspectFill"></image>
 				<view class="user-info__school__authenticated">
 					<tn-tag  v-if="user.authenticated" width="90rpx" size="sm" height="32rpx" backgroundColor="#D7D7D7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">已认证</tn-tag>
 					<tn-tag v-else fontColor="tn-color-white" size="sm" width="90rpx" height="32rpx" backgroundColor="#D7D7D7" margin="0rpx 10rpx" shape="circle">未认证</tn-tag>
@@ -101,7 +101,7 @@
 					header_image:"https://code.zwt666.top/img/header.jpg",
 					name:"哈喽哈喽嘿？",
 					id:2597534417,
-					school_image:"https://code.zwt666.top/img/school.webp",
+					school_id:"https://code.zwt666.top/img/school.webp",
 					authenticated:true,
 					reputation:99,
 					individuality_signature:"这个家伙很懒，什么都没写",
@@ -126,49 +126,49 @@
 				showGroupList:[],
 				feedsList:[
 					  {
-					    desc: '测试长度',
+					    text: '测试长度',
 					    mainImage: 'https://code.zwt666.top/img/tsg.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"求助",
 					  },
 					  {
-					    desc: '测试长度测试长度',
+					    text: '测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/2.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"表白",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/header.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"闲置出售",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/school.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"实习",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/3.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"交友",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/1.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"歪比巴卜",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/school.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"租房",
 					  },
 					  {
-					    desc: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
+					    text: '测试长度测试长度测试长度测试长度测试长度测试长度测试长度测试长度',
 					    mainImage: 'https://code.zwt666.top/img/header.jpg',
 						header_image:"https://code.zwt666.top/img/header.jpg",
 						textType:"十步杀一人",

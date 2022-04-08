@@ -10,8 +10,10 @@
 			<view class="topSearch">
 				<view v-for="(item, tindex) in topSearchNews" :key="tindex">
 					<view class="topSearch__news" :class="{topSearch__news__index0:item.index == 0}">
-						<image v-if="item.index == 0" class="topSearch__news__inline topSearch__news__index0__image" src="/static/top.png"></image>
-						<text v-else class="topSearch__news__inline topSearch__news__index" :style="{'color':item.color}">{{item.index}}</text>
+						<image v-if="item.index === 0" class="topSearch__news__inline topSearch__news__index0__image" src="/static/top.png"></image>
+						<text v-else-if="item.index === 1" class="topSearch__news__inline topSearch__news__index" style="color:#F83A36">{{item.index}}</text>
+						<text v-else-if="item.index < 4" class="topSearch__news__inline topSearch__news__index" style="color:#E68C14">{{item.index}}</text>
+						<text v-else class="topSearch__news__inline topSearch__news__index" style="color:#F5DC70">{{item.index}}</text>
 						<text class="topSearch__news__inline topSearch__news__text">{{item.content}}</text>
 						<image v-if="item.index > 0" class="topSearch__news__inline topSearch__news__image" src="/static/leaves.png"></image>
 						<text v-if="item.index > 0" class="topSearch__news__inline topSearch__news__count">{{item.count}}</text>
@@ -37,41 +39,41 @@
 				scrollTop:0,
 				topSearchNews:[
 					{content:"受疫情影响将延期返校",index:0},
-					{content:"四六级开启分批报名",index:1,count:5498,color:"#F83A36"},
-					{content:"中传雪景",index:2,count:5356,color:"#E68C14"},
-					{content:"挑战杯大创组队",index:3,count:4786,color:"#E68C14"},
-					{content:"钢琴湖落水小哥",index:4,count:4390,color:"#F5DC70"},
-					{content:"网易实习收留新传心碎考研人",index:5,count:3807,color:"#F5DC70"},
-					{content:"疫情结束一起去旅行吧",index:6,count:2870,color:"#F5DC70"},
-					{content:"我们的冬奥",index:7,count:2670,color:"#F5DC70"},
-					{content:"中国传媒大学考研成绩",index:8,count:2365,color:"#F5DC70"},
-					{content:"材料评议",index:9,count:1875,color:"#F5DC70"},
-					{content:"非毕业生返校申请",index:10,count:1201,color:"#F5DC70"},
-					{content:"大学生就业与创业指导智慧树答案",index:11,count:1120,color:"#F5DC70"},
-					{content:"凑字",index:12,count:832,color:"#F5DC70"},
-					{content:"凑字",index:13,count:666,color:"#F5DC70"},
-					{content:"凑字",index:14,count:543,color:"#F5DC70"},
-					{content:"凑字",index:15,count:432,color:"#F5DC70"},
-					{content:"凑字",index:16,count:414,color:"#F5DC70"},
-					{content:"凑字",index:17,count:322,color:"#F5DC70"},
-					{content:"凑字",index:18,count:311,color:"#F5DC70"},
-					{content:"凑字",index:19,count:213,color:"#F5DC70"},
-					{content:"凑字",index:12,count:832,color:"#F5DC70"},
-					{content:"凑字",index:13,count:666,color:"#F5DC70"},
-					{content:"凑字",index:14,count:543,color:"#F5DC70"},
-					{content:"凑字",index:15,count:432,color:"#F5DC70"},
-					{content:"凑字",index:16,count:414,color:"#F5DC70"},
-					{content:"凑字",index:17,count:322,color:"#F5DC70"},
-					{content:"凑字",index:18,count:311,color:"#F5DC70"},
-					{content:"凑字",index:19,count:213,color:"#F5DC70"},
-					{content:"凑字",index:12,count:832,color:"#F5DC70"},
-					{content:"凑字",index:13,count:666,color:"#F5DC70"},
-					{content:"凑字",index:14,count:543,color:"#F5DC70"},
-					{content:"凑字",index:15,count:432,color:"#F5DC70"},
-					{content:"凑字",index:16,count:414,color:"#F5DC70"},
-					{content:"凑字",index:17,count:322,color:"#F5DC70"},
-					{content:"凑字",index:18,count:311,color:"#F5DC70"},
-					{content:"凑字",index:19,count:213,color:"#F5DC70"}
+					{content:"四六级开启分批报名",index:1,count:5498},
+					{content:"中传雪景",index:2,count:5356},
+					{content:"挑战杯大创组队",index:3,count:4786},
+					{content:"钢琴湖落水小哥",index:4,count:4390},
+					{content:"网易实习收留新传心碎考研人",index:5,count:3807},
+					{content:"疫情结束一起去旅行吧",index:6,count:2870},
+					{content:"我们的冬奥",index:7,count:2670},
+					{content:"中国传媒大学考研成绩",index:8,count:2365},
+					{content:"材料评议",index:9,count:1875},
+					{content:"非毕业生返校申请",index:10,count:1201},
+					{content:"大学生就业与创业指导智慧树答案",index:11,count:1120},
+					{content:"凑字",index:12,count:832},
+					{content:"凑字",index:13,count:666},
+					{content:"凑字",index:14,count:543},
+					{content:"凑字",index:15,count:432},
+					{content:"凑字",index:16,count:414},
+					{content:"凑字",index:17,count:322},
+					{content:"凑字",index:18,count:311},
+					{content:"凑字",index:19,count:213},
+					{content:"凑字",index:12,count:832},
+					{content:"凑字",index:13,count:666},
+					{content:"凑字",index:14,count:543},
+					{content:"凑字",index:15,count:432},
+					{content:"凑字",index:16,count:414},
+					{content:"凑字",index:17,count:322},
+					{content:"凑字",index:18,count:311},
+					{content:"凑字",index:19,count:213},
+					{content:"凑字",index:12,count:832},
+					{content:"凑字",index:13,count:666},
+					{content:"凑字",index:14,count:543},
+					{content:"凑字",index:15,count:432},
+					{content:"凑字",index:16,count:414},
+					{content:"凑字",index:17,count:322},
+					{content:"凑字",index:18,count:311},
+					{content:"凑字",index:19,count:213}
 				],
 				foundPageNews:[
 					{

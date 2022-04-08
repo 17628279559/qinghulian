@@ -21,12 +21,12 @@
 		<demo-title>  <!--滑动展示 -->
 			<tn-swiper 
 				style="height:350"
-				:list="list" 
+				:list="swaper_list" 
 				mode="dot"></tn-swiper>
 		</demo-title>
 		<demo-title>  <!--滚动通知信息 -->
 		  <tn-notice-bar 
-			:list="list.map(item=>item['text'])"
+			:list="notice_list.map(item=>item.text)"
 			backgroundColor="#FFFFFF" 
 			mode="vertical" 
 			radius=50
@@ -38,16 +38,16 @@
 			<u-search 
 			:show-action="false" 
 			bgColor="#FFFFFF" 
-			placeholder="搜索" 
+			placeholder="输入标签或关键字" 
 			searchIconSize=16
 			height =10
 			margin="0rpx 0rpx 0rpx 20rpx"></u-search>
 		</view>
-		<view v-for="(item, index) in news" :key="index">
+		<view v-for="(item, index) in home_news" :key="index">
 			<view class="published">
 				<view class="published__massage-statistical">
-					<u-icon name="chat-fill" :color="item.iconColor" size="24"></u-icon>
-					<view class="published__massage-statistical__num">{{item.num}}</view>
+					<u-icon name="chat-fill" :color="item.color" size="24"></u-icon>
+					<view class="published__massage-statistical__num">{{item.comments_num}}</view>
 				</view>
 				<view class="published__massage-text">
 					<view class="published__massage-text__content">{{item.textType}} | {{item.textContent}}</view>
@@ -73,17 +73,23 @@
 		data() {
 			return {
 				scrollTop:0,
+				clindex:0,
 				university_location:"中国传媒大学",
-
-				list: [
-				  {image: 'https://code.zwt666.top/img/swiper/spring.jpg',text:'春天小赵在改bug'},
-				  {image: 'https://code.zwt666.top/img/swiper/summer.jpg',text:'夏天小赵在改bug'},
-				  {image: 'https://code.zwt666.top/img/swiper/autumn.jpg',text:'秋天小赵在改bug'},
-				  {image: 'https://code.zwt666.top/img/swiper/winter.jpg',text:'冬天小赵在改bug'},
+				swaper_list:[
+				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/spring.jpg'},
+				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/summer.jpg'},
+				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/autumn.jpg'},
+				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/winter.jpg'},
 				],
-				news:[{
-					num:17,
-					iconColor:"#9599E2",
+				notice_list: [
+				  {articleId: 123,text:'春天小赵在改bug'},
+				  {articleId: 123,text:'夏天小赵在改bug'},
+				  {articleId: 123,text:'秋天小赵在改bug'},
+				  {articleId: 123,text:'冬天小赵在改bug'},
+				],
+				home_news:[{
+					comments_num:17,
+					color:'#E93EFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -91,8 +97,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -100,8 +106,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#FF0000',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -109,8 +115,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#BBFF00',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -118,8 +124,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -127,8 +133,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -136,8 +142,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -145,8 +151,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
@@ -154,8 +160,8 @@
 					herderImg:"https://code.zwt666.top/img/header.jpg",
 					contentImg:"https://code.zwt666.top/img/test.jpg"
 				},{
-					num:17,
-					iconColor:"#9599E2",
+					comments_num:17,
+					color:'#33FFFF',
 					textType:"求助",
 					textContent:"请问大家电脑的垃圾广告弹窗怎么去掉啊啊啊啊",
 					userName:"哈呀锡",
