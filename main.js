@@ -1,6 +1,5 @@
 import App from './App'
 import store from './store'
-
 import Vue from 'vue'
 import uView from 'uview-ui'
 import TuniaoUI from 'tuniao-ui'
@@ -12,11 +11,11 @@ import attention from "@/components/attention/attention.vue"
 let vuexStore = require('@/store/$t.mixin.js')
 Vue.mixin(vuexStore)
 
-
 Vue.component("my-attention",attention);
 Vue.use(uView)
 Vue.use(TuniaoUI)
 Vue.prototype.$member = member;
+Vue.prototype.$userInfo = {};
 
 App.mpType = 'app'
 const app = new Vue({

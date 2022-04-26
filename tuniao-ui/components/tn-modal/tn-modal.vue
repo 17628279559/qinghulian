@@ -75,7 +75,7 @@
       // 弹框宽度
       width: {
         type: String,
-        default: '84%'
+        default: '60%'
       },
       // 内边距
       padding: {

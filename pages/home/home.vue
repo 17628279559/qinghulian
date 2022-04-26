@@ -75,18 +75,8 @@
 				scrollTop:0,
 				clindex:0,
 				university_location:"中国传媒大学",
-				swaper_list:[
-				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/spring.jpg'},
-				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/summer.jpg'},
-				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/autumn.jpg'},
-				  {articleId:123,image: 'https://code.zwt666.top/img/swiper/winter.jpg'},
-				],
-				notice_list: [
-				  {articleId: 123,text:'春天小赵在改bug'},
-				  {articleId: 123,text:'夏天小赵在改bug'},
-				  {articleId: 123,text:'秋天小赵在改bug'},
-				  {articleId: 123,text:'冬天小赵在改bug'},
-				],
+				swaper_list:[],
+				notice_list: [],
 				home_news:[{
 					comments_num:17,
 					color:'#E93EFF',
@@ -167,9 +157,19 @@
 					userName:"哈呀锡",
 					update:"20分钟前更新",
 					herderImg:"https://code.zwt666.top/img/header.jpg",
-					contentImg:"https://code.zwt666.top/img/test.jpg"
+						contentImg:"https://code.zwt666.top/img/test.jpg"
 				}]
 			}
+		},
+		beforeCreate() {
+			const db = uniCloud.database()
+			db.collection('poplar_notice_list').get().then(res=>{
+				this.notice_list = res.result.data
+			}),
+			
+			db.collection('poplar_swaper_list').get().then(res=>{
+				this.swaper_list = res.result.data
+			})
 		},
 		methods: {
 
@@ -306,10 +306,6 @@
 				margin-top: 10rpx;
 				border-radius: 10rpx;
 				transition:all .2s ease 0s;
-			}
-			
-			&:hover image{
-				transform:scale(.9) rotate(3deg);
 			}
 		}
 	}

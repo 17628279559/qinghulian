@@ -15,9 +15,9 @@
 		<view class="campus-icon">
 			<tn-grid :align="align" :hoverClass="hoverClass">
 			  <block v-for="(item, cindex) in campusIcon" :key="cindex">
-			    <tn-grid-item style="width: 25%;">
+			    <tn-grid-item style="width: 25%;" @click="openModal(item.name)">
 			      <view class="campus-icon__item" >
-			        <image class="campus-icon__item__image" :src="[`https://code.zwt666.top/img/map/${item.url}.png`]" mode="aspectFit" @click="openModal(item.name)"></image>
+			        <image class="campus-icon__item__image" :src="[`https://code.zwt666.top/img/map/${item.url}.png`]" mode="aspectFit"></image>
 			      </view>
 			    </tn-grid-item>
 			  </block>
@@ -37,17 +37,14 @@
 				<view class="modal-tuqi__title">
 					{{content}}
 				</view>
-				<image class="modal-tuqi__image" src="https://code.zwt666.top/img/tsg.jpg"></image>
+				<image class="modal-tuqi__image" src="https://code.zwt666.top/img/tsg.jpg" lazy-load="true"></image>
 				<view class="modal-tuqi__description">
 					又名“中传大阅城” 开放自习座位、研讨间。开放时间：8:00 - 22:30,特殊节假日另行通知
 				</view>
 				<a class="modal-tuqi__link" href="#">点击跳转公众号</a>
 			</view>
-		</tn-modal>
-		
-		
+		</tn-modal>	
 		<tn-toast ref="toast"></tn-toast>
-		
 	</view>
 </template>
 

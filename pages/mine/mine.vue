@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="header-background">
-			<image class="header-background__img" :src="user.background_img" mode="aspectFill" >
+			<image class="header-background__img" :src="background_img" mode="aspectFill" >
 			</image>
 		</view>
 		<view class="setting">
@@ -9,20 +9,20 @@
 		</view>
 		<view class="user-info">
 			<view class="user-info__header">
-				<image class="user-info__header__img" :src="user.header_image"></image>
+				<image class="user-info__header__img" :src="userInfo.avatarUrl" mode="aspectFill"></image>
 			</view>
 			<view class="user-info__nameId">
 				<view class="user-info__nameId__name">
-					{{user.name}}
+					{{userInfo.user_name}}
 				</view>
 				<view class="user-info__nameId__id">
-					{{`ID:${user.id}`}}
+					{{`ID:${id}`}}
 				</view>
 			</view>
 			<view class="user-info__school">
-				<image class="user-info__school__img" :src="user.school_id" mode="aspectFill"></image>
+				<image class="user-info__school__img" :src="school" mode="aspectFill"></image>
 				<view class="user-info__school__authenticated">
-					<tn-tag  v-if="user.authenticated" width="90rpx" size="sm" height="32rpx" backgroundColor="#D7D7D7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">已认证</tn-tag>
+					<tn-tag  v-if="userInfo.authenticated" width="90rpx" size="sm" height="32rpx" backgroundColor="#D7D7D7" fontColor="tn-color-white" margin="0rpx 10rpx" shape="circle">已认证</tn-tag>
 					<tn-tag v-else fontColor="tn-color-white" size="sm" width="90rpx" height="32rpx" backgroundColor="#D7D7D7" margin="0rpx 10rpx" shape="circle">未认证</tn-tag>
 				</view>
 			</view>
@@ -31,25 +31,25 @@
 					<image class="user-info__reputation__leaves__image" src="/static/w-leaves.png"></image>
 				</view>
 				<view class="user-info__reputation__rect">
-					<tn-tag fontColor="#FFFFFF" size="sm" width="140rpx" height="36rpx" backgroundColor="#95EC6A" margin="4rpx 5rpx">{{`信誉度:${user.reputation}`}}</tn-tag>
+					<tn-tag fontColor="#FFFFFF" size="sm" width="140rpx" height="36rpx" backgroundColor="#95EC6A" margin="4rpx 5rpx">{{`信誉度:${userInfo.reputation}`}}</tn-tag>
 				</view>
 			</view>
 		</view>
 		<view class="individuality-signature">
-			{{user.individuality_signature}}
+			{{userInfo.individuality_signature}}
 		</view>
 		<view class="gzfshz">
 			<view class="gzfshz__gz">
 				<text style="color:#D9D9D9;font-size: 24rpx;">关注</text>
-				<text style="margin-top: 15rpx;">{{user.focus}}</text>
+				<text style="margin-top: 15rpx;">{{userInfo.focus}}</text>
 			</view>
 			<view class="gzfshz__gz">
 				<text style="color:#D9D9D9;font-size: 24rpx;">粉丝</text>
-				<text style="margin-top: 15rpx;">{{user.fans}}</text>
+				<text style="margin-top: 15rpx;">{{userInfo.fans}}</text>
 			</view>
 			<view class="gzfshz__gz">
 				<text style="color:#D9D9D9;font-size: 24rpx;">获赞</text>
-				<text style="margin-top: 15rpx;">{{user.praise}}</text>
+				<text style="margin-top: 15rpx;">{{userInfo.praise}}</text>
 			</view>
 		</view>
 		<view class="content">
@@ -96,19 +96,10 @@
 		data() {
 			return {
 				mcurrent:0,
-				user:{
-					background_img:"https://code.zwt666.top/img/header.jpg",
-					header_image:"https://code.zwt666.top/img/header.jpg",
-					name:"哈喽哈喽嘿？",
-					id:2597534417,
-					school_id:"https://code.zwt666.top/img/school.webp",
-					authenticated:true,
-					reputation:99,
-					individuality_signature:"这个家伙很懒，什么都没写",
-					focus:67,
-					fans:56,
-					praise:127,
-				},
+				background_img:"https://code.zwt666.top/img/header.jpg",
+				id:2597534417,
+				school:"https://code.zwt666.top/img/school.webp",
+				userInfo:{},
 				fixedList: [
 				  {name: '发布'},
 				  {name: '点赞'},
@@ -178,12 +169,13 @@
 			}
 		},
 		mounted() {
+			this.userInfo = getApp().globalData.userInfo
 			this.getGroup();
 		},
 		methods: {
 			tabChange(index) {
 			  this.mcurrent = index;
-			  
+				
 			  // 切换feedsList以达到目的
 			},
 			getGroup(){
@@ -242,7 +234,7 @@
 				width: 120rpx;
 				height: 120rpx;
 				border-radius: 60rpx;
-				border: 6rpx solid #FFF;
+				border: 4rpx solid #FFF;
 			}
 		}
 		&__nameId{
